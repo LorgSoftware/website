@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Lorg - The plain text hierarchical data manager</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <a href="index.html" title="Lorg Home Page" class="header__link">Lorg</a>
+            <div class="header__link-group-right">
+                <a href="download.html" title="Download Lorg" class="header__link">Download</a>
+                <a href="documentation.html" class="header__link">Learn</a>
+                <a href="app.html" title="Web app" class="header__link">Try</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="slogan">
+            <div class="container">
+                <h1 class="slogan__title">Lorg is a hierarchical data manager in plain text.</h1>
+                <p>
+                    Define the relation between the elements, the units for each element and let Lorg manage the sum of the units.
+                    Lorg can be used as a <a href="download.html" title="Download Lorg">CLI software</a> or as <a href="app.html" title="Try Lorg online">a web app</a>.
+                </p>
+            </div>
+        </section>
+
+        <section class="page-section page-section--odd">
+            <div class="container">
+                <h1 class="page-section__title-1">Showcase</h1>
+                <p>
+                    Let say you want to go for a trek, and you are preparing your trekking gear.
+                    You want to know how much it will cost and how heavy it will be.
+                    Let's write a Lorg document for that!
+                </p>
+
+                <h2 class="page-section__title-2">Define your hierarchy</h2>
+
+                <p>
+                    If you are familiar with Markdown, you are already good.
+                    Start a line with one or more <code class="inline-code">#</code> to define your hierarchy and to give a title for your component.
+                    You can put spaces to make your hierarchy visually clearer.
+                </p>
+
+                <div class="code-snippet">
+<pre class="code-snippet__pre"><code class="code-snippet__code"># Sleep
+    ## Shelter
+        ### Trekking poles
+        ### Tarp
+    ## Sleeping bag
+# Clothes
+    ## Poncho
+    ## Tee-shirt
+    ## Shoes</code></pre>
+                </div>
+
+                <h2 class="page-section__title-2">Define your units</h2>
+
+                <p>
+                    For each component, you can add units.
+                    Units are defined using <code class="inline-code">$</code> followed by the unit name followed by <code class="inline-code">:</code> followed by the unit value.
+                    If you do not put a unit in a component, Lorg will automatically create the unit and put as a value the sum of the unit of the children.
+                </p>
+
+                <div class="code-snippet">
+<pre class="code-snippet__pre"><code class="code-snippet__code"># Sleep
+    ## Shelter
+        ### Trekking poles
+            $ Cost: 69
+            $ Weight: 560
+        ### Tarp
+            $ Cost: 60
+            $ Weight: 495
+    ## Sleeping bag
+        $ Cost: 51.99
+        $ Weight: 1200.00
+# Clothes
+    ## Poncho
+        $ Cost: 49
+        $ Weight: 400
+    ## Tee-shirt
+        $ Cost: 0
+        $ Weight: 150
+    ## Shoes
+        $ Cost: 169
+        $ Weight: 0</code></pre>
+                </div>
+
+                <h2 class="page-section__title-2">Add comments</h2>
+
+                <p>
+                    In Lorg, a comment is a line that is not a component definition or a unit definition.
+                    Comments are ignored by Lorg.
+                </p>
+
+                <div class="code-snippet">
+<pre class="code-snippet__pre"><code class="code-snippet__code"># Sleep
+    ## Shelter
+        Should I use a tent instead?
+        ### Trekking poles
+            $ Cost: 69
+            $ Weight: 560
+        ### Tarp
+            $ Cost: 60
+            $ Weight: 495
+    ## Sleeping bag
+        $ Cost: 51.99
+        $ Weight: 1200.00
+# Clothes
+    I should bring a jacket.
+    And maybe a beanie.
+    ## Poncho
+        $ Cost: 49
+        $ Weight: 400
+    ## Tee-shirt
+        $ Cost: 0
+        $ Weight: 150
+    ## Shoes
+        $ Cost: 169
+        $ Weight: 0
+        I wear them so no weight in the backpack.</code></pre>
+                </div>
+
+                <h2 class="page-section__title-2">Let Lorg handle the calculation</h2>
+
+                <p>
+                    Now that you have everything, let Lorg do the rest.
+                    Here is the result that Lorg will return.
+                </p>
+
+                <div class="code-snippet">
+<pre class="code-snippet__pre">TOTAL
+│ $ Cost: 398.99 [Calculated]
+│ $ Weight: 2805 [Calculated]
+├── Sleep
+│   │ $ Cost: 180.99 [Calculated]
+│   │ $ Weight: 2255 [Calculated]
+│   ├── Shelter
+│   │   │ $ Cost: 129 [Calculated]
+│   │   │ $ Weight: 1055 [Calculated]
+│   │   ├── Trekking poles
+│   │   │     $ Cost: 69
+│   │   │     $ Weight: 560
+│   │   └── Tarp
+│   │         $ Cost: 60
+│   │         $ Weight: 495
+│   └── Sleeping bag
+│         $ Cost: 51.99
+│         $ Weight: 1200
+└── Clothes
+    │ $ Cost: 218 [Calculated]
+    │ $ Weight: 550 [Calculated]
+    ├── Poncho
+    │     $ Cost: 49
+    │     $ Weight: 400
+    ├── Tee-shirt
+    │     $ Cost: 0
+    │     $ Weight: 150
+    └── Shoes
+          $ Cost: 169
+          $ Weight: 0</pre>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <h1 class="page-section__title-1">Why using Lorg?</h1>
+                <p>
+                    Spreadsheets are incredible software, but they are not practical for working on hierarchical data.
+                    Lorg solves many issues.
+                </p>
+
+                <h2 class="page-section__title-2">A human friendly format</h2>
+                <p>
+                    Spreadsheets are saved in a format designed only for the software.
+                    You must use the software to work on the data.
+                </p>
+                <p>
+                    Lorg uses plain text with a simple format.
+                    You can open a Lorg file with any text editor you cant.
+                    You can easily use a source control system (git, Fossil, SVN...) to manage the history of your Lorg files.
+                    Plus the format is so simple that you can quickly hack your own version of Lorg if you do not have access to Lorg.
+                    (The first version of Lorg was written in VimScript in about three hours.)
+                </p>
+
+                <h2 class="page-section__title-2">A clear view on the data structure</h2>
+                <p>
+                    Spreadsheets are tables: you have columns and rows.
+                    This disposition is great when you are working on flat data: each element has units value but no sub-element.
+                </p>
+                <p>
+                    When you want to work on elements having other elements, the table disposition is confusing.
+                    You end up using functionalities like <q>group</q> and <q>subtotal</q>, or you create tables on the side with manual references to other cells.
+                    In all cases, you end up with something that is messy.
+                </p>
+                <p>
+                    On the other end Lorg gives you a clear view on the data structure.
+                    At a glance you immediately see what element are parent elements or child elements.
+                </p>
+
+                <h2 class="page-section__title-2">Less risk of messing up data manipulation</h2>
+
+                <p>
+                    In a spreadsheet you have to select the cells that a formula is referring.
+                    When inserting new data, there is the risk that the new data is not referred by the formula.
+                    This is often the case when you fill a row after a table, you may forget that this row was not selected by the formula.
+                    At the end, you end up with results that are incorrect.
+                </p>
+
+                <p>
+                    In Lorg all the data is considered.
+                    The biggest mistakes you can do is misspelling a unit name, or messing up the data hierarchy because you add too much or too little <code class="inline-code">#</code> when you defined a component.
+                    Those mistakes are really easy to catch.
+                </p>
+
+                <h2 class="page-section__title-2">Respecting your inputs</h2>
+
+                <p>
+                    Spreadsheets do not respect your data.
+                    They modify your data to be more pleasant for the users (localizing the decimal point, adding non-breakable spaces between digits...).
+                    When you copy your data and paste them somewhere else, you have to sanitize them.
+                </p>
+
+                <p>
+                    Lorg reads a plain text where you write the data into a specific format.
+                    So it does not change your data.
+                </p>
+
+                <p>
+                    Fun fact, this advantage was found while writing the example above.
+                    The data were copied from a spreadsheet and pasted into a Lorg file.
+                    The author could not figure why the result was wrong using Lorg.
+                    The reason was simple, numbers contained non-breakable spaces and <code class="inline-code">,</code> instead of <code class="inline-code">.</code>.
+                </p>
+
+                <h2 class="page-section__title-2">Comments</h2>
+
+                <p>
+                    Lorg includes the possibility to add comments, and they are considered as first-class citizen.
+                    Comments are not hidden when you open a Lorg file.
+                </p>
+
+                <h2 class="page-section__title-2">UNIX philosophy</h2>
+
+                <p>
+                    Lorg was designed to be easily integrated into scripts.
+                    If you are a UNIX or Linux user, you can easily pipe the result to filter it.
+                </p>
+
+                <p>
+                Using the previous examples, if you do not want to see the <code class="inline-code">Cost</code> unit you can use the command <code class="inline-code">grep</code> to filter that out.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="page-section page-section--odd">
+            <div class="container">
+                <h1 class="page-section__title-1">Drawbacks</h1>
+                <p>
+                    As for anything, Lorg has some drawbacks.
+                </p>
+
+                <h2 class="page-section__title-2">Only sums the values</h2>
+                <p>
+                    For the moment Lorg can only do sums on numbers (integrals and floats).
+                    Maybe in future versions there will be a way to create formulas.
+                </p>
+
+                <h2 class="page-section__title-2">For power users</h2>
+                <p>
+                    Lorg is designed for people who are comfortable with text editors.
+                    Lorg is not a GUI software but merely a parser for data specified in a markup language.
+                </p>
+
+                <p>
+                    During a long period of time Lorg was developed with the hope to make it a commercial software, but this goal was abandoned.
+                    You can find a prototype <a href="https://www.nales.xyz/en/apps/lorg.html" title="Lorg prototype">here</a>, but it does not work with the current Lorg file format.
+                </p>
+                <!-- TODO: put the prototype in the website-->
+
+                <h2 class="page-section__title-2">Vertical space</h2>
+                <p>
+                    Because the categories and units are defined line by line, the data tend to take a lot of vertical space on a screen.
+                    Maybe in future versions there will be an option to print the result in a more tabular format.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <nav class="footer__nav">
+                <div class="footer__content">
+                    <section class="footer__section">
+                        <h1 class="footer__section-title">Dev</h1>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-list-element"><a class="footer__link" href="source.html" title="Source code">Source</a></li>
+                            <li class="footer__nav-list-element"><a class="footer__link" href="devlog.html" title="Development log">Log</a></li>
+                            <li class="footer__nav-list-element"><a class="footer__link" href="wishlist.html" title="Wishlist">Wishlist</a></li>
+                        </ul>
+                    </section>
+                    <section class="footer__section">
+                        <h1 class="footer__section-title">Use</h1>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-list-element"><a class="footer__link" href="download.html" title="Download">Download</a></li>
+                            <li class="footer__nav-list-element"><a class="footer__link" href="documentation.html" title="Lorg documentation">Learn</a></li>
+                            <li class="footer__nav-list-element"><a class="footer__link" href="app.html" title="Web app">Try</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

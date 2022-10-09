@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>App - Lorg</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <a href="#" class="header__link">Lorg</a>
+            <div class="header__link-group-right">
+                <a href="#" class="header__link">Download</a>
+                <a href="#" class="header__link">Learn</a>
+                <a href="app.html" class="header__link">Try</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="editor">
+                <div class="editor__options-panel">
+                    <details>
+                        <summary class="editor__options-summary">Options</summary>
+                        <div class="editor__options-container">
+                            <div class="editor__option">
+                                <input type="checkbox" id="no-ignored" /><label for="no-ignored">No ignored</label>
+                            </div>
+                            <div class="editor__option">
+                                <input type="checkbox" id="no-ignored-and-calculated" /><label for="no-ignored-and-calculated">No ignored and calculated</label>
+                            </div>
+                            <div class="editor__option">
+                                <input type="checkbox" id="no-total" /><label for="no-total">No total</label>
+                            </div>
+                            <div class="editor__option">
+                                <input type="checkbox" id="no-indent" /><label for="no-indent">No indent</label>
+                            </div>
+                            <div class="editor__option">
+                                <input type="checkbox" id="prettify" /><label for="prettify">Prettify</label>
+                            </div>
+                            <div class="editor__option">
+                                <input type="checkbox" id="to-json" /><label for="to-json">To JSON</label>
+                            </div>
+                        </div>
+                        <div class="editor__option">
+                            <label for="total-name">Total name</label> <input type="text" id="total-name" />
+                        </div>
+                    </details>
+                </div>
+                <div class="editor__input-panel">
+                    <div class="editor__input-column">
+                        <textarea id="user-editor" class="editor__editor" contenteditable="true"></textarea>
+                        <div class="editor__submit-row">
+                            <button id="button-submit" class="editor__submit">Submit &gt;</button>
+                            <span class="editor__submit-explanation">Or press Ctrl + Enter.</span>
+                        </div>
+                    </div>
+                    <div class="editor__result-column">
+                        <textarea id="result-display" class="editor__result-display"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="lorg.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            TODO
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Documentation - Lorg</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <a href="#" class="header__link">Lorg</a>
+            <div class="header__link-group-right">
+                <a href="#" class="header__link">Download</a>
+                <a href="#" class="header__link">Learn</a>
+                <a href="app.html" class="header__link">Try</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <section class="page-section">
+            <div class="container">
+                <h1 class="page-section__title-1">Lorg in a nutshell</h1>
+                <p>
+                    Lorg defines a syntax to organize hierarchical data.
+                    Hierarchical data are components containing other components.
+                    Here is a full example of a Lorg document used to prepare the gear for a trek.
+                </p>
+
+                <div class="code-snippet">
+<pre class="code-snippet__pre"><code class="code-snippet__code"># Sleep
+    ## Shelter
+        Should I use a tent instead?
+        ### Trekking poles
+            $ Cost: 69
+            $ Weight: 560
+        ### Tarp
+            $ Cost: 60
+            $ Weight: 495
+    ## Sleeping bag
+        $ Cost: 51.99
+        $ Weight: 1200.00
+        ### Liner
+            $ Cost: 50
+            $ Weight: 340
+# Clothes
+    I should bring a jacket.
+    And maybe a beanie.
+    ## Poncho
+        $ Cost: 49
+        $ Weight: 400
+    ## Tee-shirt
+        $ Cost: 0
+        $ Weight: 150
+    ## Shoes
+        $ Cost: 169
+        $ Weight: 0
+        I wear them so no weight in the backpack.</code></pre>
+                </div>
+
+                <p>
+                    Your goal with this document is to have the total <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code> of your gear.
+                </p>
+
+                <p>
+                    By glancing at the example you can certainly already create your own Lorg documents, but let's explain how this document is structured.
+                </p>
+
+                <h2 class="page-section__title-2">Leading and trailing spaces</h2>
+
+                <p>
+                    Leading spaces (spaces at the beginning of a line) and trailing spaces (spaces at the end of a line) are ignored.
+                    They can be used to make the visualisation of the hierarchy easier.
+                </p>
+
+                <h2 class="page-section__title-2">Nodes</h2>
+
+                <p>
+                    In Lorg, components are call <strong>nodes</strong>.
+                    <strong>Nodes</strong> have a <strong>title</strong>, <strong>children</strong> and <strong>units</strong>.
+                </p>
+
+                <p>
+                    In this example, there is a <strong>node</strong> with the <strong>title</strong> <code class="inline-code">Poncho</code>.
+                    It is the child of the <strong>node</strong> with the <strong>title</strong> <code class="inline-code">Clothes</code>.
+                    It defines two <strong>units</strong>: <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code>.
+                </p>
+
+                <p>
+                    If you know Markdown, you already know how to structure your <strong>nodes</strong>.
+                    You use <code class="inline-code">#</code> to define the hierarchy.
+                </p>
+
+                <ul>
+                    <li>
+                        The <strong>node</strong> with a <strong>title</strong> <code class="inline-code">Clothes</code> has a <strong>heading level</strong> of <code class="inline-code">1</code>.
+                    </li>
+                    <li>
+                        The <strong>node</strong> with a <strong>title</strong> <code class="inline-code">Sleep</code> is a sibling of <code class="code-inline">Clothes</code>.
+                    </li>
+                    <li>
+                        The <strong>node</strong> with a <strong>title</strong> <code class="inline-code">Poncho</code> is a child of <code class="code-inline">Clothes</code>.
+                    </li>
+                </ul>
+
+                <p>
+                    Multiple <strong>nodes</strong> can have the same <strong>title</strong>.
+                </p>
+
+                <h2 class="page-section__title-2">Units</h2>
+
+                <p>
+                    In Lorg, we define <strong>units</strong>.
+                    They have a <strong>name</strong> and a <strong>value</strong>.
+                    We associate <strong>nodes</strong> with <strong>units</strong>.
+                </p>
+
+                <p>
+                    To define a <strong>unit</strong>, start a line with a <code class="inline-code">$</code> followed by the <strong>unit name</strong> then <code class="inline-code">:</code> then the <strong>unit value</strong>.
+                </p>
+
+                <p>
+                    A <strong>unit name</strong> can contain spaces and <code class="inline-code">:</code>.
+                    The <strong>names</strong> <code class="inline-code">Weight (g)</code> and <code class="inline-code">expenses:groceries</code> are valid.
+                </p>
+
+                <p>
+                    A <strong>unit value</strong> can be an integer or a floating number.
+                    The number must be in decimal (example: <code class="inline-code">34.5</code>).
+                    Values like <code class="inline-code">0xFF</code> are invalid.
+                </p>
+
+                <p>
+                    In the example, the <code class="inline-code">Trekking poles</code> have a <code class="inline-code">Cost</code> of <code class="inline-code">69</code> and a <code class="inline-code">Weight</code> of <code class="inline-code">560</code>.
+                </p>
+
+                <p>
+                    If you do not know the <strong>value</strong> of a <strong>unit</strong> in a <strong>node</strong>: do not define it!
+                    The <strong>values</strong> will be calculated by Lorg according the <strong>unit values</strong> in the <strong>node children</strong>.
+                    This is the whole point of Lorg!
+                </p>
+
+                <p>
+                    <strong>For the moment, Lorg only sum the values.</strong>
+                    Maybe in the future other operations will be available (average, min, max...).
+                </p>
+
+                <p>
+                    Be careful: you cannot define multiple time in the same <strong>node</strong> a <strong>unit</strong>.
+                </p>
+
+                <h2 class="page-section__title-2">Comments</h2>
+
+                <p>
+                    All lines that are not <strong>node definitions</strong> or <strong>unit definitions</strong> are <strong>comments</strong>
+                    <strong>Comments</strong> are ignored by Lorg when parsing a document.
+                </p>
+
+                <h2 class="page-section__title-2">Getting the result</h2>
+
+                <p>
+                    When using Lorg on the example, this result is returned (by using the <code class="inline-code">prettify</code> option).
+                </p>
+
+                <div class="code-snippet">
+<pre class="code-snippet__pre">TOTAL
+│ $ Cost: 398.99 [Calculated]
+│ $ Weight: 2805 [Calculated]
+├── Sleep
+│   │ $ Cost: 180.99 [Calculated]
+│   │ $ Weight: 2255 [Calculated]
+│   ├── Shelter
+│   │   │ $ Cost: 129 [Calculated]
+│   │   │ $ Weight: 1055 [Calculated]
+│   │   ├── Trekking poles
+│   │   │     $ Cost: 69
+│   │   │     $ Weight: 560
+│   │   └── Tarp
+│   │         $ Cost: 60
+│   │         $ Weight: 495
+│   └── Sleeping bag
+│       │ $ Cost: 51.99
+│       │ $ Weight: 1200
+│       └── Liner
+│             $ Cost: 50 [Ignored]
+│             $ Weight: 340 [Ignored]
+└── Clothes
+    │ $ Cost: 218 [Calculated]
+    │ $ Weight: 550 [Calculated]
+    ├── Poncho
+    │     $ Cost: 49
+    │     $ Weight: 400
+    ├── Tee-shirt
+    │     $ Cost: 0
+    │     $ Weight: 150
+    └── Shoes
+          $ Cost: 169
+          $ Weight: 0</pre>
+                </div>
+
+                <p>
+                    Lorg gives the total for each <strong>units</strong>.
+                </p>
+
+                <p>
+                    When a <strong>unit</strong> was not defined in the document, Lorg creates it.
+                    If the <strong>node</strong> does not have children, the <strong>value</strong> is <code class="inline-code">0</code>.
+                    Else the <strong>value</strong> is calculated according to the children.
+                    In all cases, those created <strong>units</strong> are indicated by <code class="inline-code">[Calculated]</code>
+                </p>
+
+                <p>
+                    A <strong>unit</strong> defined in the document can be ignored.
+                    This means that its <strong>value</strong> is not used for the total.
+                    It happens when a parent already set a <strong>value</strong>.
+                    Those ignored <strong>units</strong> are indicated by <code class="inline-code">[Ignored]</code>
+                </p>
+
+                <h2 class="page-section__title-2">Using Lorg</h2>
+
+                <!-- TODO: indicate links to the source code, the binaries and the web app. -->
+                <p>
+                    Lorg is available as a command line interface or as a web app.
+                </p>
+
+                <p>
+                    You can <a href="#" title="Lorg binaries">download the CLI version</a>.
+                    When using the CLI version, put your Lorg in a file (for example here <code class="inline-code">trek.lorg</code>) and use the <code class="inline-code">lorg</code> command.
+                </p>
+
+                <div class="code-snippet">
+<pre class="code-snippet__pre">lorg trek.lorg</pre>
+                </div>
+
+                <!-- TODO: put link -->
+                <p>
+                    Or you can <a href="#" title="Lorg web app">use the web app</a>.
+                </p>
+
+                <p>
+                    Lorg is open source and you can <a href="#" title="Lorg source code">access to the source code</a>
+                </p>
+
+                <p>
+                    You now have all the basis to use Lorg.
+                    We hope Lorg will be useful for you!
+                </p>
+
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <h1 class="page-section__title-1">Syntax definition in English</h1>
+                <p>
+                    Here is the syntax definition written in English.
+                    Lorg syntax was designed to be easy to pick up so you can certainly use Lorg without reading this section.
+                </p>
+
+                <h2 class="page-section__title-2">Various</h2>
+
+                <p>
+                    <strong>Any character</strong> is any character except the <strong>new line character</strong>.
+                </p>
+
+                <p>
+                    A <strong>white space</strong> can be the <strong>space character</strong> or the <strong>tabulation character</strong>.
+                </p>
+
+                <p>
+                    <strong>Optional white spaces</strong> is zero or multiple <strong>white spaces</strong>.
+                </p>
+
+                <p>
+                    <strong>Leading spaces</strong> is <strong>optional white spaces</strong> at the beginning of a line.
+                </p>
+
+                <p>
+                    <strong>Trailing spaces</strong> is <strong>optional white spaces</strong> at the end of a line.
+                </p>
+
+                <p>
+                    A <strong>digit</strong> is <code class="inline-code">0</code> or <code class="inline-code">1</code> or <code class="inline-code">2</code> or <code class="inline-code">3</code> or <code class="inline-code">4</code> or <code class="inline-code">5</code> or <code class="inline-code">6</code> or <code class="inline-code">7</code> or <code class="inline-code">8</code> or <code class="inline-code">9</code>.
+                </p>
+
+                <p>
+                    An <strong>integral</strong> is at least one <strong>digit</strong>.
+                </p>
+
+                <p>
+                    A <strong>float</strong> is at least one <strong>digit</strong> then <strong>.</strong> then at least one <strong>digit</strong>.
+                </p>
+
+                <p>
+                    A <strong>number</strong> is a <strong>float</strong> or an <strong>integral</strong>. <strong>float</strong> definition has a precedence over <strong>integral</strong> definition.
+                </p>
+
+                <h2 class="page-section__title-2">Nodes</h2>
+
+                <p>
+                    A <strong>node heading</strong> contains one or more <code class="inline-code">#</code>.
+                </p>
+
+                <p>
+                    A <strong>node title</strong> contains non <strong>white space</strong> then zero or more <strong>any character</strong>, and must end with a non <strong>white space</strong>.
+                </p>
+
+                <p>
+                    A <strong>node definition</strong> is defined in a full line from the first character of the line to the last character.
+                </p>
+
+                <p>
+                    A <strong>node definition</strong> ignores <strong>leading spaces</strong> and <strong>trailing spaces</strong>.
+                </p>
+
+                <p>
+                    A <strong>node definition</strong> contains a <strong>node heading</strong> then <strong>optional white spaces</strong> then a <strong>node title</strong>.
+                </p>
+
+                <p>
+                    Then number of <code class="inline-code">#</code> in the <strong>node heading</strong> defines the <strong>node level</strong>.
+                </p>
+
+                <p>
+                    In a Lorg document, there can be multiple <strong>node definitions</strong> with a <strong>node level</strong> of <code class="inline-code">1</code>.
+                    For nodes with a superior <strong>node level</strong>, the <strong>node level</strong> must not be superior to <code class="inline-code">1 + the node level of the previous node definition</code>.
+                    In other words, a <strong>node</strong> must be the sibling or the direct descendant of another <strong>node</strong>.
+                </p>
+
+                <p>
+                    If a line starts a <strong>node definition</strong> but it is invalid (for example it does not contain the <strong>node title</strong>), then this is an error.
+                </p>
+
+                <h2 class="page-section__title-2">Units</h2>
+
+                <p>
+                    A <strong>unit name</strong> contains non <strong>white space</strong> then zero or more <strong>any character</strong>, and must end with a non <strong>white space</strong>.
+                </p>
+
+                <p>
+                    A <strong>unit value</strong> is a <strong>number</strong>.
+                </p>
+
+                <p>
+                    A <strong>unit definition</strong> is defined in a full line from the first character of the line to the last characters.
+                </p>
+
+                <p>
+                    A <strong>node definition</strong> ignores <strong>leading spaces</strong> and <strong>trailing spaces</strong>.
+                </p>
+
+                <p>
+                    A <strong>unit definition</strong> contains a <strong>$</strong> then <strong>optional white spaces</strong> then a <strong>unit name</strong> then <strong>optional white spaces</strong> then a <strong>:</strong> then <strong>optional white spaces</strong> then a <strong>unit value</strong>.
+                </p>
+
+                <p>
+                    In the <strong>unit definition</strong>, this means that <strong>unit names</strong> can contain one or more <strong>:</strong> and <strong>white spaces</strong>.
+                </p>
+
+                <p>
+                    A <strong>unit definition</strong> must follow, but not necessarily directly, a <strong>node definition</strong>. In other words, a <strong>unit definition</strong> must be associated with a <strong>node definition</strong>.
+                </p>
+
+                <p>
+                    If a line starts a <strong>unit definition</strong> but it is invalid (for example it does not contain a <strong>unit value</strong>), then this is an error.
+                </p>
+
+                <h2 class="page-section__title-2">Comments</h2>
+
+                <p>
+                    All lines that are not <strong>node definitions</strong> or <strong>unit definitions</strong> are <strong>comments</strong>; they are ignored.
+                </p>
+
+            </div>
+        </section>
+
+
+        <section class="page-section">
+            <div class="container">
+                <h1 class="page-section__title-1">Syntax definition in regular expressions</h1>
+
+                <p>
+                    Here is the syntax definition in JavaScript (at least with the ECMAScript 6).
+                </p>
+
+                <p>
+                    Note that of course you would not implement those exact regular expressions if you use regular expressions in you own Lorg implementation.
+                    The purpose here is to explicitly show the definitions of all the terms.
+                    For example to catch a node definition in a line in your implementation, you could trim the white spaces then use a simple regular expression like <code class="inline-code">^(#+)\s*(.+)$</code>.
+                </p>
+
+                <div class="code-snippet">
+<pre class="code-snippet__pre"><code class="code-snippet__code">// We use ?: for not capturing the unnecessary groups.
+
+any_character = `[^\n]`
+white_space = `[ \t]`
+non_white_space = `[^ \t]`
+optional_white_space = `${white_space}*`
+leading_white_space = `^${white_space}*`
+trailing_white_space = `${white_space}*$`
+
+sign = `[-+]`
+digit = `[0-9]`
+integral = `${sign}?${digit}+`
+float = `${sign}?${digit}+\\.${digit}+`
+// This is important for numbers to catch floats before integrals.
+number = `(?:${float}|${integral})`
+
+node_heading = `#+`
+node_title = `(?:${non_white_space}${any_character}*${non_white_space}|${non_white_space})`
+node_definition = `${leading_white_space}(${node_heading})${optional_white_space}(${node_title})${trailing_white_space}`
+
+unit_name = `(?:${non_white_space}${any_character}*${non_white_space}|${non_white_space})`
+unit_value = number
+unit_definition = `${leading_white_space}\\$${optional_white_space}(${unit_name})${optional_white_space}:${optional_white_space}(${unit_value})${trailing_white_space}`</code></pre>
+                </div>
+
+                <p>
+                    At the end of this page, there is a full JavaScript code to test those regular expressions.
+                    You can use those tests to test your own implementation.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <h1 class="page-section__title-1">Behaviour</h1>
+
+
+                <p>
+                    When Lorg parses a Lorg document, it creates a tree of <strong>nodes</strong>.
+                    A <strong>node</strong> contains a <strong>title</strong>, other <strong>nodes</strong> (its <strong>children</strong>) and <strong>units</strong>.
+                </p>
+
+                <p>
+                    Multiple <strong>nodes</strong> can have the same <strong>title</strong>.
+
+                </p>
+
+                <p>
+                    A <strong>unit value</strong> can be considered as <strong>real</strong> or <strong>calculated</strong>.
+                    A <strong>real unit value</strong> is a value explicitly defined in the Lorg document.
+                    A <strong>calculated unit value</strong> is a value calculated by Lorg.
+                </p>
+
+                <p>
+                    When a <strong>unit</strong> is not defined in the Lorg document for a <strong>node</strong> but defined for another <strong>node</strong>, Lorg creates this <strong>unit</strong> and set it as <strong>calculated</strong>.
+                    If the <strong>node</strong> does not have <strong>children</strong> then the <strong>unit value</strong> is set to the <strong>default unit value</strong> (which is<code class="inline-code">0</code>); if the <strong>node</strong> has <strong>children</strong> then the <strong>unit value</strong> is the sum of the <strong>children unit values</strong>.
+                </p>
+
+                <p>
+                    A <strong>unit</strong> can be defined only once in a <strong>node</strong>.
+
+                </p>
+
+                <p>
+                    A <strong>unit</strong> can be considered as <strong>ignored</strong>.
+                    When a <strong>unit value</strong> is considered as <strong>real</strong> in a <strong>node</strong>, then all the <strong>unit values</strong> of the <strong>children</strong> of this <strong>node</strong> for this <strong>unit</strong> are considered <strong>ignored</strong>.
+                    This means that those <strong>ignored unit values</strong> are not used to get the <strong>unit value</strong> for the highest <strong>node</strong> parent (the <strong>node</strong> of <strong>node level</strong> <code class="inline-code">1</code>).
+                </p>
+
+                <p>
+                    Lorg automatically creates a main <strong>node</strong> called the <strong>total node</strong>.
+                    All <strong>nodes</strong> with a <strong>node level</strong> of <code class="inline-code">1</code> are the <strong>children</strong> of this <strong>total node</strong>.
+                    In the <strong>total node</strong> calculates its <strong>unit values</strong> as it is done for any other <strong>nodes</strong>.
+                    The Lorg software should contain an option for hiding the <strong>total node</strong> and an option for changing its <strong>title</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <h1 class="page-section__title-1">Tests in JavaScript</h1>
+
+                <p>
+                    If you want to test your implementation in JavaScript, here are some tests.
+                </p>
+
+                <div class="code-snippet">
+<pre class="code-snippet__pre"><code class="code-snippet__code">function test_is_full_match(string, regex_name, regex, expected) {
+    var matched = string.match(regex);
+    var result = matched !== null &amp;&amp; matched[0] === string;
+    if(result !== expected) {
+        if(result) {
+            console.log("Error: '" + string + "' is " + regex_name);
+        } else {
+            console.log("Error: '" + string + "' is not " + regex_name);
+        }
+    }
+    return result === expected;
+}
+
+// expected_subgroups_matches should only be the subgroups
+function test_all_matches(string, regex_name, regex, expected_subgroups_matches) {
+    function print_error() {
+        console.log("Error: '" + string + "does not match all subgroups");
+        console.log("    Matched subgroups  " + JSON.stringify(matched.splice(1)));
+        console.log("    Expected subgroups " + JSON.stringify(expected_subgroups_matches));
+    }
+    if(!test_is_full_match(string, regex_name, regex, true)) {
+        return false;
+    }
+    var matched = string.match(regex);
+    if(matched.length != expected_subgroups_matches.length + 1) {
+        print_error();
+        return false;
+    }
+    for(var i = 1; i &lt; matched.length; i++) {
+        if(matched[i] != expected_subgroups_matches[i-1]) {
+            print_error();
+            return false;
+        }
+    }
+    return true;
+}
+
+test_is_full_match(""      , "any_character"        , any_character        , false);
+test_is_full_match(" "     , "any_character"        , any_character        , true);
+test_is_full_match("\n"    , "any_character"        , any_character        , false);
+test_is_full_match(" "     , "white_space"          , white_space          , true);
+test_is_full_match("\t"    , "white_space"          , white_space          , true);
+test_is_full_match(""      , "optional_white_space" , optional_white_space , true);
+test_is_full_match(" \t  " , "optional_white_space" , optional_white_space , true);
+test_is_full_match(" ui  " , "optional_white_space" , optional_white_space , false);
+
+test_is_full_match(""       , "digit"    , digit    , false);
+test_is_full_match("3"      , "digit"    , digit    , true);
+test_is_full_match("33"     , "digit"    , digit    , false);
+test_is_full_match(""       , "integral" , integral , false);
+test_is_full_match("3"      , "integral" , integral , true);
+test_is_full_match("33"     , "integral" , integral , true);
+test_is_full_match("+33"    , "integral" , integral , true);
+test_is_full_match("-33"    , "integral" , integral , true);
+test_is_full_match("0xFF"   , "integral" , integral , false);
+test_is_full_match("33jk"   , "integral" , integral , false);
+test_is_full_match("33"     , "float"    , float    , false);
+test_is_full_match("33.7"   , "float"    , float    , true);
+test_is_full_match("33kj"   , "float"    , float    , false);
+test_is_full_match("33k7"   , "float"    , float    , false);
+test_is_full_match("0xFF.F" , "float"    , float    , false);
+
+test_is_full_match(""       , "number" , number , false);
+test_is_full_match("0xFF"   , "number" , number , false);
+test_is_full_match("0xFF.F" , "number" , number , false);
+test_is_full_match("3"      , "number" , number , true);
+test_is_full_match("33"     , "number" , number , true);
+test_is_full_match("33.7"   , "number" , number , true);
+test_is_full_match("33jk"   , "number" , number , false);
+test_is_full_match("33k7"   , "number" , number , false);
+test_is_full_match("33kj"   , "number" , number , false);
+
+test_is_full_match(""   , "node_heading" , node_heading , false);
+test_is_full_match("#"  , "node_heading" , node_heading , true);
+test_is_full_match("##" , "node_heading" , node_heading , true);
+
+test_is_full_match(""      , "node_title" , node_title , false);
+test_is_full_match("3"     , "node_title" , node_title , true);
+test_is_full_match("a"     , "node_title" , node_title , true);
+test_is_full_match("a b c" , "node_title" , node_title , true);
+test_is_full_match("#"     , "node_title" , node_title , true);
+test_is_full_match("# a"   , "node_title" , node_title , true);
+
+test_is_full_match(""                   , "node_definition" , node_definition , false);
+test_is_full_match("#"                  , "node_definition" , node_definition , false);
+test_is_full_match("# "                 , "node_definition" , node_definition , false);
+test_is_full_match("# node title"       , "node_definition" , node_definition , true);
+test_is_full_match("#node title"        , "node_definition" , node_definition , true);
+test_is_full_match("  #node title"      , "node_definition" , node_definition , true);
+test_is_full_match("#node title   "     , "node_definition" , node_definition , true);
+test_is_full_match("  #node title   "   , "node_definition" , node_definition , true);
+test_is_full_match("### #node title   " , "node_definition" , node_definition , true);
+
+test_all_matches("### a   ", "node_definition", node_definition, ["###", "a"]);
+test_all_matches("### #node title   ", "node_definition", node_definition, ["###", "#node title"]);
+
+test_is_full_match(""                   , "unit_name" , unit_name , false);
+test_is_full_match("3"                  , "unit_name" , unit_name , true);
+test_is_full_match("a"                  , "unit_name" , unit_name , true);
+test_is_full_match("a b c"              , "unit_name" , unit_name , true);
+test_is_full_match("#"                  , "unit_name" , unit_name , true);
+test_is_full_match("# a"                , "unit_name" , unit_name , true);
+test_is_full_match("unit:"              , "unit_name" , unit_name , true);
+test_is_full_match("unit: other: other" , "unit_name" , unit_name , true);
+
+test_is_full_match(""       , "unit_value" , unit_value , false);
+test_is_full_match("0xFF"   , "unit_value" , unit_value , false);
+test_is_full_match("0xFF.F" , "unit_value" , unit_value , false);
+test_is_full_match("3"      , "unit_value" , unit_value , true);
+test_is_full_match("33"     , "unit_value" , unit_value , true);
+test_is_full_match("33.7"   , "unit_value" , unit_value , true);
+test_is_full_match("33jk"   , "unit_value" , unit_value , false);
+test_is_full_match("33k7"   , "unit_value" , unit_value , false);
+test_is_full_match("33kj"   , "unit_value" , unit_value , false);
+
+test_is_full_match(""                                   , "unit_definition" , unit_definition , false);
+test_is_full_match("$"                                  , "unit_definition" , unit_definition , false);
+test_is_full_match("$   :    "                          , "unit_definition" , unit_definition , false);
+test_is_full_match("$ Unit name  :    "                 , "unit_definition" , unit_definition , false);
+test_is_full_match("$   :  45  "                        , "unit_definition" , unit_definition , false);
+test_is_full_match("$   :  45.5  "                      , "unit_definition" , unit_definition , false);
+test_is_full_match("$ Unit name  :  0x45  "             , "unit_definition" , unit_definition , false);
+test_is_full_match("$ Unit name  :  45  "               , "unit_definition" , unit_definition , true);
+test_is_full_match("$ Unit name  :  45.5  "             , "unit_definition" , unit_definition , true);
+test_is_full_match("$ Unit name:other name  :  45.5  "  , "unit_definition" , unit_definition , true);
+test_is_full_match("$ Unit name:other name  ::  45.5  " , "unit_definition" , unit_definition , true);
+
+test_all_matches("$ Unit name  :  45  "               , "unit_definition" , unit_definition , ["Unit name", "45"]);
+test_all_matches("$ Unit name  :  45.5  "             , "unit_definition" , unit_definition , ["Unit name", "45.5"]);
+test_all_matches("$ Unit name:other name  :  45.5  "  , "unit_definition" , unit_definition , ["Unit name:other name", "45.5"]);
+test_all_matches("$ Unit name:other name  ::  45.5  " , "unit_definition" , unit_definition , ["Unit name:other name  :", "45.5"]);</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            TODO
+        </div>
+    </footer>
+</body>
+</html>
