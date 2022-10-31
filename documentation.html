@@ -93,21 +93,25 @@
                     You use <code class="inline-code">#</code> to define the hierarchy.
                 </p>
 
+                <p>
+                    Multiple <strong>nodes</strong> can have the same <strong>title</strong>.
+                </p>
+
+                <p>
+                    In our example:
+                </p>
+
                 <ul>
                     <li>
                         The <strong>node</strong> with a <strong>title</strong> <code class="inline-code">Clothes</code> has a <strong>heading level</strong> of <code class="inline-code">1</code>.
                     </li>
                     <li>
-                        The <strong>node</strong> with a <strong>title</strong> <code class="inline-code">Sleep</code> is a sibling of <code class="code-inline">Clothes</code>.
+                        The <strong>node</strong> with a <strong>title</strong> <code class="inline-code">Sleep</code> is a sibling of <code class="inline-code">Clothes</code>.
                     </li>
                     <li>
-                        The <strong>node</strong> with a <strong>title</strong> <code class="inline-code">Poncho</code> is a child of <code class="code-inline">Clothes</code>.
+                        The <strong>node</strong> with a <strong>title</strong> <code class="inline-code">Poncho</code> is a child of <code class="inline-code">Clothes</code>.
                     </li>
                 </ul>
-
-                <p>
-                    Multiple <strong>nodes</strong> can have the same <strong>title</strong>.
-                </p>
 
                 <h2 class="page-section__title-2">Units</h2>
 
@@ -129,11 +133,7 @@
                 <p>
                     A <strong>unit value</strong> can be an integer or a floating number.
                     The number must be in decimal (example: <code class="inline-code">34.5</code>).
-                    Values like <code class="inline-code">0xFF</code> are invalid.
-                </p>
-
-                <p>
-                    In the example, the <code class="inline-code">Trekking poles</code> have a <code class="inline-code">Cost</code> of <code class="inline-code">69</code> and a <code class="inline-code">Weight</code> of <code class="inline-code">560</code>.
+                    Hexadecimal values (example: <code class="inline-code">0xFF</code>) are invalid.
                 </p>
 
                 <p>
@@ -151,11 +151,29 @@
                     Be careful: you cannot define multiple time in the same <strong>node</strong> a <strong>unit</strong>.
                 </p>
 
+                <p>
+                    In our example:
+                </p>
+
+                <ul>
+                    <li>
+                        <code class="inline-code">Tee-shirt</code> has a <code class="inline-code">Cost</code> of <code class="inline-code">0</code> and a <code class="inline-code">Weight</code> of <code class="inline-code">150</code>.
+                    </li>
+                    <li>
+                        <code class="inline-code">Clothes</code> does not have any units.
+                        Lorg will calculate for it its associated <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code> units.
+                    </li>
+                </ul>
+
                 <h2 class="page-section__title-2">Comments</h2>
 
                 <p>
                     All lines that are not <strong>node definitions</strong> or <strong>unit definitions</strong> are <strong>comments</strong>
                     <strong>Comments</strong> are ignored by Lorg when parsing a document.
+                </p>
+
+                <p>
+                    In our example, the line <code class="inline-code">I should bring a jacket.</code> is ignored.
                 </p>
 
                 <h2 class="page-section__title-2">Getting the result</h2>
@@ -201,7 +219,7 @@
                 </div>
 
                 <p>
-                    Lorg gives the total for each <strong>units</strong>.
+                    Lorg gives the total for each <strong>unit</strong>.
                 </p>
 
                 <p>
@@ -217,6 +235,20 @@
                     It happens when a parent already set a <strong>value</strong>.
                     Those ignored <strong>units</strong> are indicated by <code class="inline-code">[Ignored]</code>
                 </p>
+
+                <p>
+                    In our example:
+                </p>
+
+                <ul>
+                    <li>
+                        <code class="inline-code">Clothes</code> now has <strong>units</strong>.
+                        The units values are the sum of the unit values of its children.
+                    </li>
+                    <li>
+                        The unit values of <code class="inline-code">Liner</code> are ignored because its parent <code class="inline-code">Sleeping bag</code> has already defined values for the same units.
+                    </li>
+                </ul>
 
                 <h2 class="page-section__title-2">Using Lorg</h2>
 
