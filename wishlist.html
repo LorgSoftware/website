@@ -29,11 +29,23 @@
                     Think of this page as an idea dump.
                 </p>
 
+                <h2 class="page-section__title-2">Binaries</h2>
+
+                <p>
+                    For the moment no binaries are available for download.
+                    The code has no special dependencies so it is really easy to build, but not every user wants to need the tools to build the software.
+                    It could be nice if the binaries were available for the most popular operating systems.
+                </p>
+
+                <p>
+                    Fortunately a web application version is available in the website.
+                </p>
+
                 <h2 class="page-section__title-2">Lorg as a library</h2>
 
                 <p>
                     Currently Lorg is implemented mostly as a monolithic software.
-                    The engine part (parsing, manipulating data...) could be put into a Haxe library.
+                    The engine part (parsing, manipulating data...) could be put into a Haxe library and a C++ library.
                     This would enable the possibility for other developers to integrate Lorg support into their software.
                     Some courageous developers could even make a full-fleshed UI for using Lorg documents.
                 </p>
@@ -59,7 +71,7 @@
                     The main reason for that is to give the possibility for the users of the future Lorg library to import and export Lorg documents.
                 </p>
 
-                <h2 class="page-section__title-2">Tabular display for CLI version</h2>
+                <h2 class="page-section__title-2">Tabular display for the CLI version</h2>
 
                 <p>
                     One of the main drawback of Lorg is the huge vertical space needed.
@@ -75,13 +87,6 @@ Sleep                  169               2900
   Sleeping bag          50               1200</pre>
                 </div>
 
-                <h2 class="page-section__title-2">Tabular display for CLI version</h2>
-
-                <p>
-                    One of the main drawback of Lorg is the huge vertical space needed.
-                    It could be nice to at least display the result in a more compact way like in the following example.
-                </p>
-
                 <h2 class="page-section__title-2">Preamble</h2>
 
                 <p>
@@ -92,8 +97,8 @@ Sleep                  169               2900
 
                 <p>
                     In the preamble, options can be set.
-                    To simply the parsing, the options would be set in a LISP format.
-                    Line comments can be used using <code class="inline-block">;</code>.
+                    To simplify the parsing, the options would be set in a LISP format.
+                    Line comments can be used using <code class="inline-code">;</code>.
                     Example below.
                 </p>
 
