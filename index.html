@@ -23,7 +23,7 @@
             <div class="container">
                 <h1 class="slogan__title">Lorg is a hierarchical data manager in plain text.</h1>
                 <p>
-                    Define the relation between the elements, the units for each element and let Lorg manage the sum of the units.
+                    Define the relation between the elements, the units for each element, and let Lorg manage the sum of the units.
                     Lorg can be used as a <a href="download.html" title="Download Lorg">CLI software</a> or as <a href="app.html" title="Try Lorg online">a web app</a>.
                 </p>
             </div>
@@ -41,7 +41,7 @@
                 <h2 class="page-section__title-2">Define your hierarchy</h2>
 
                 <p>
-                    If you are familiar with Markdown, you are already know how to define your data hierarchy.
+                    If you are familiar with Markdown, you already know how to define your data hierarchy.
                     Start a line with one or more <code class="inline-code">#</code> to define your hierarchy and to give a title for your component.
                     In Lorg, the components are named <strong>nodes</strong>.
                     You can put spaces to make your hierarchy visually clearer.
@@ -65,7 +65,7 @@
                     For each node, you can add <strong>units</strong>.
                     Units are defined using <code class="inline-code">$</code> followed by the <strong>unit name</strong> followed by <code class="inline-code">:</code> followed by the <strong>unit value</strong>.
                     If you do not put a unit in a node, Lorg will automatically create the unit and put as a value the sum of the unit of the children.
-                    A unit value can be an integer or a floating point number.
+                    A unit value can be an integer or a floating-point number.
                 </p>
 
                 <div class="code-snippet">
@@ -174,7 +174,7 @@
             <div class="container">
                 <h1 class="page-section__title-1">Why using Lorg?</h1>
                 <p>
-                    Spreadsheets are incredible software, but they are not practical for working on hierarchical data.
+                    Spreadsheets are incredible software, but they are not the best tools for working on hierarchical data.
                     Lorg solves many issues.
                 </p>
 
@@ -185,16 +185,16 @@
                 </p>
                 <p>
                     Lorg uses plain text with a simple format.
-                    You can open a Lorg file with any text editor you cant.
+                    You can open a Lorg file with any text editor you want.
                     You can easily use a source control system (git, Fossil, SVN...) to manage the history of your Lorg files.
-                    Plus the format is so simple that you can quickly hack your own version of Lorg if you do not have access to Lorg.
+                    Plus, the format is so simple that you can quickly hack your own version of Lorg if you do not have access to Lorg.
                     (The first version of Lorg was written in VimScript in about three hours.)
                 </p>
 
                 <h2 class="page-section__title-2">A clear view on the data structure</h2>
                 <p>
                     Spreadsheets are tables: you have columns and rows.
-                    This disposition is great when you are working on flat data: each element has units value but no sub-element.
+                    This disposition is great when you are working on flat data: each element has unit values but no sub-element.
                 </p>
                 <p>
                     When you want to work on elements having other elements, the table disposition is confusing.
@@ -202,17 +202,17 @@
                     In all cases, you end up with something that is messy.
                 </p>
                 <p>
-                    On the other end Lorg gives you a clear view on the data structure.
+                    On the other hand Lorg gives you a clear view on the data structure.
                     At a glance you immediately see what element are parent elements or child elements.
                 </p>
 
                 <h2 class="page-section__title-2">Less risk of messing up data manipulation</h2>
 
                 <p>
-                    In a spreadsheet you have to select the cells that a formula is referring.
+                    In a spreadsheet, you have to select the cells that a formula is referring.
                     When inserting new data, there is the risk that the new data is not referred by the formula.
                     This is often the case when you fill a row after a table, you may forget that this row was not selected by the formula.
-                    At the end, you end up with results that are incorrect.
+                    At the end, you end up with incorrect results.
                 </p>
 
                 <p>
@@ -230,8 +230,7 @@
                 </p>
 
                 <p>
-                    Lorg reads a plain text where you write the data into a specific format.
-                    So it does not change your data.
+                    Lorg reads a plain text where you write the data into a specific format; so it does not change your data.
                 </p>
 
                 <p>
@@ -256,7 +255,7 @@
                 </p>
 
                 <p>
-                Using the previous examples, if you do not want to see the <code class="inline-code">Cost</code> unit you can use the command <code class="inline-code">grep</code> to filter that out.
+                Using the previous examples, if you do not want to see the <code class="inline-code">Cost</code> unit then you can use the command <code class="inline-code">grep</code> to filter that out.
                 </p>
 
             </div>
@@ -271,7 +270,7 @@
 
                 <h2 class="page-section__title-2">Only sums the values</h2>
                 <p>
-                    For the moment Lorg can only do sums on numbers (integrals and floats).
+                    For the moment, Lorg can only do sums on numbers (integers or floating-point numbers).
                     Maybe in future versions there will be a way to create formulas.
                 </p>
 
