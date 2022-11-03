@@ -41,8 +41,9 @@
                 <h2 class="page-section__title-2">Define your hierarchy</h2>
 
                 <p>
-                    If you are familiar with Markdown, you are already good.
+                    If you are familiar with Markdown, you are already know how to define your data hierarchy.
                     Start a line with one or more <code class="inline-code">#</code> to define your hierarchy and to give a title for your component.
+                    In Lorg, the components are named <strong>nodes</strong>.
                     You can put spaces to make your hierarchy visually clearer.
                 </p>
 
@@ -61,9 +62,10 @@
                 <h2 class="page-section__title-2">Define your units</h2>
 
                 <p>
-                    For each component, you can add units.
-                    Units are defined using <code class="inline-code">$</code> followed by the unit name followed by <code class="inline-code">:</code> followed by the unit value.
-                    If you do not put a unit in a component, Lorg will automatically create the unit and put as a value the sum of the unit of the children.
+                    For each node, you can add <strong>units</strong>.
+                    Units are defined using <code class="inline-code">$</code> followed by the <strong>unit name</strong> followed by <code class="inline-code">:</code> followed by the <strong>unit value</strong>.
+                    If you do not put a unit in a node, Lorg will automatically create the unit and put as a value the sum of the unit of the children.
+                    A unit value can be an integer or a floating point number.
                 </p>
 
                 <div class="code-snippet">
@@ -93,7 +95,7 @@
                 <h2 class="page-section__title-2">Add comments</h2>
 
                 <p>
-                    In Lorg, a comment is a line that is not a component definition or a unit definition.
+                    In Lorg, a <strong>comment</strong> is a line that is not a node definition or a unit definition.
                     Comments are ignored by Lorg.
                 </p>
 
@@ -129,7 +131,7 @@
 
                 <p>
                     Now that you have everything, let Lorg do the rest.
-                    Here is the result that Lorg will return.
+                    Here is the result that Lorg could return with the correct options activated.
                 </p>
 
                 <div class="code-snippet">
@@ -215,7 +217,7 @@
 
                 <p>
                     In Lorg all the data is considered.
-                    The biggest mistakes you can do is misspelling a unit name, or messing up the data hierarchy because you add too much or too little <code class="inline-code">#</code> when you defined a component.
+                    The biggest mistakes you can do is misspelling a unit name, or messing up the data hierarchy because you add too much or too little <code class="inline-code">#</code> when you defined a node.
                     Those mistakes are really easy to catch.
                 </p>
 
@@ -236,7 +238,7 @@
                     Fun fact, this advantage was found while writing the example above.
                     The data were copied from a spreadsheet and pasted into a Lorg file.
                     The author could not figure why the result was wrong using Lorg.
-                    The reason was simple, numbers contained non-breakable spaces and <code class="inline-code">,</code> instead of <code class="inline-code">.</code>.
+                    The reason was simple, the numbers contained non-breakable spaces and <code class="inline-code">,</code> instead of <code class="inline-code">.</code> because the spreadsheet was localized in French.
                 </p>
 
                 <h2 class="page-section__title-2">Comments</h2>
@@ -264,7 +266,7 @@
             <div class="container">
                 <h1 class="page-section__title-1">Drawbacks</h1>
                 <p>
-                    As for anything, Lorg has some drawbacks.
+                    As for everything, Lorg has some drawbacks.
                 </p>
 
                 <h2 class="page-section__title-2">Only sums the values</h2>
@@ -278,12 +280,6 @@
                     Lorg is designed for people who are comfortable with text editors.
                     Lorg is not a GUI software but merely a parser for data specified in a markup language.
                 </p>
-
-                <p>
-                    During a long period of time Lorg was developed with the hope to make it a commercial software, but this goal was abandoned.
-                    You can find a prototype <a href="https://www.nales.xyz/en/apps/lorg.html" title="Lorg prototype">here</a>, but it does not work with the current Lorg file format.
-                </p>
-                <!-- TODO: put the prototype in the website-->
 
                 <h2 class="page-section__title-2">Vertical space</h2>
                 <p>
