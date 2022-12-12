@@ -79,22 +79,22 @@
 
                 <p>
                     In Lorg, components are call <strong>nodes</strong>.
-                    <strong>Nodes</strong> have a <strong>title</strong>, <strong>children</strong> and <strong>units</strong>.
+                    Nodes have a <strong>title</strong>, <strong>children</strong> and <strong>units</strong>.
                 </p>
 
                 <p>
-                    In this example, there is a <strong>node</strong> with the <strong>title</strong> <code class="inline-code">Poncho</code>.
-                    It is the child of the <strong>node</strong> with the <strong>title</strong> <code class="inline-code">Clothes</code>.
-                    It defines two <strong>units</strong>: <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code>.
+                    In this example, there is a node with the title <code class="inline-code">Poncho</code>.
+                    It is the child of the node with the title <code class="inline-code">Clothes</code>.
+                    It defines two units: <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code>.
                 </p>
 
                 <p>
-                    If you know Markdown, you already know how to structure your <strong>nodes</strong>.
+                    If you know Markdown, you already know how to structure your nodes.
                     You use <code class="inline-code">#</code> to define the hierarchy and the number of <code class="inline-code">#</code> defines the <strong>node level</strong>.
                 </p>
 
                 <p>
-                    Multiple <strong>nodes</strong> can have the same <strong>title</strong>.
+                    Multiple nodes can have the same title.
                 </p>
 
                 <p>
@@ -103,13 +103,13 @@
 
                 <ul>
                     <li>
-                        The <strong>node</strong> with the <strong>title</strong> <code class="inline-code">Clothes</code> has a <strong>level</strong> of <code class="inline-code">1</code>.
+                        The node with the title <code class="inline-code">Clothes</code> has a level of <code class="inline-code">1</code>.
                     </li>
                     <li>
-                        The <strong>node</strong> with the <strong>title</strong> <code class="inline-code">Sleep</code> is a sibling of <code class="inline-code">Clothes</code>.
+                        The node with the title <code class="inline-code">Sleep</code> is a sibling of <code class="inline-code">Clothes</code>.
                     </li>
                     <li>
-                        The <strong>node</strong> with the <strong>title</strong> <code class="inline-code">Poncho</code> is a child of <code class="inline-code">Clothes</code>.
+                        The node with the title <code class="inline-code">Poncho</code> is a child of <code class="inline-code">Clothes</code>.
                     </li>
                 </ul>
 
@@ -118,36 +118,36 @@
                 <p>
                     In Lorg, we define <strong>units</strong>.
                     They have a <strong>name</strong> and a <strong>value</strong>.
-                    We associate <strong>nodes</strong> with <strong>units</strong>.
+                    We associate nodes with units.
                 </p>
 
                 <p>
-                    To define a <strong>unit</strong>, start a line with a <code class="inline-code">$</code> followed by the <strong>unit name</strong> then <code class="inline-code">:</code> then the <strong>unit value</strong>.
+                    To define a unit, start a line with a <code class="inline-code">$</code> followed by the unit name then by <code class="inline-code">:</code> then by the unit value.
                 </p>
 
                 <p>
-                    A <strong>unit name</strong> can contain spaces and <code class="inline-code">:</code>.
-                    The <strong>names</strong> <code class="inline-code">Weight (g)</code> and <code class="inline-code">expenses:groceries</code> are valid.
+                    A unit name can contain spaces and <code class="inline-code">:</code>.
+                    For example the names <code class="inline-code">Weight (g)</code> and <code class="inline-code">expenses:groceries</code> are valid.
                 </p>
 
                 <p>
-                    A <strong>unit value</strong> can be an integer or a floating number.
-                    The number must be in decimal (example: <code class="inline-code">34.5</code>).
-                    Hexadecimal values (example: <code class="inline-code">0xFF</code>) are invalid.
+                    A unit value can be an <strong>integer</strong> or a <strong>decimal</strong>.
+                    The number must be in the Base-10 number system like (example: <code class="inline-code">34.5</code>, <code class="inline-code">15</code>).
+                    Hexadecimal values like <code class="inline-code">0xFF</code> are invalid.
                 </p>
 
                 <p>
-                    If a <strong>node</strong> defines multiple times a <strong>value</strong> for the same <strong>unit</strong> then the last defined <strong>value</strong> is considered.
+                    If a node defines multiple times a value for the same unit, then the last defined value is considered.
                 </p>
 
                 <p>
-                    If you do not know the <strong>value</strong> of a <strong>unit</strong> in a <strong>node</strong>: do not define it!
-                    The <strong>values</strong> will be calculated by Lorg according to the <strong>unit values</strong> in the <strong>node children</strong>.
+                    If you do not know the value of a unit in a node: do not define it!
+                    The values will be calculated by Lorg according to the unit values in the node children.
                     This is the whole point of Lorg!
                 </p>
 
                 <p>
-                    <strong>For the moment, Lorg only sum the values.</strong>
+                    <strong>For the moment, Lorg only sums the values.</strong>
                     Maybe in the future other operations will be available (average, min, max...).
                 </p>
 
@@ -169,7 +169,7 @@
 
                 <p>
                     All lines that are not <strong>node definitions</strong> or <strong>unit definitions</strong> are <strong>comments</strong>.
-                    <strong>Comments</strong> are ignored by Lorg.
+                    Comments are ignored by Lorg.
                 </p>
 
                 <p>
@@ -219,17 +219,17 @@
                 </div>
 
                 <p>
-                    When a <strong>unit</strong> was not defined in the document, Lorg creates it.
-                    If the <strong>node</strong> does not have <strong>children</strong>, the <strong>value</strong> is <code class="inline-code">0</code>.
-                    Else the <strong>value</strong> is calculated according to the <strong>children</strong>.
-                    In all cases, those created <strong>units</strong> are indicated by <code class="inline-code">[Calculated]</code>
+                    When a unit was not defined in the document, it is <strong>calculated</strong> by Lorg.
+                    If the node does not have children, the value is <code class="inline-code">0</code>.
+                    Else the value is calculated according to the children.
+                    In all cases, those created units are indicated by <code class="inline-code">[Calculated]</code>
                 </p>
 
                 <p>
-                    A <strong>unit</strong> defined in the document can be ignored.
-                    This means that its <strong>value</strong> is not used for the total.
-                    It happens when a parent already set a <strong>value</strong>.
-                    Those ignored <strong>units</strong> are indicated by <code class="inline-code">[Ignored]</code>
+                    A unit defined in the document can be <strong>ignored</strong>.
+                    This means that its value is not used for the total.
+                    It happens when a parent already set a value.
+                    Those ignored units are indicated by <code class="inline-code">[Ignored]</code>
                 </p>
 
                 <p>
@@ -238,7 +238,7 @@
 
                 <ul>
                     <li>
-                        <code class="inline-code">Clothes</code> now has <strong>units</strong>.
+                        <code class="inline-code">Clothes</code> now has units.
                         The units values are the sum of the unit values of its children.
                     </li>
                     <li>
@@ -254,7 +254,8 @@
                 </p>
 
                 <p>
-                    When using the CLI version, write your document into a file (for example here <code class="inline-code">trek.lorg</code>) and use the <code class="inline-code">lorg</code> command.
+                    When using the CLI version, write your document into a file and use the <code class="inline-code">lorg</code> command.
+                    If we put our example in a file named <code class="inline-code">trek.lorg</code>, we can use the following command.
                 </p>
 
                 <div class="code-snippet">
@@ -266,8 +267,8 @@
                 </p>
 
                 <p>
-                    You now have all the basis to use Lorg.
-                    We hope Lorg will be useful for you!
+                    You now know everything you need to know to use Lorg.
+                    We hope you will find Lorg useful for you!
                 </p>
 
             </div>
@@ -318,11 +319,11 @@
                 </p>
 
                 <p>
-                    A <strong>float</strong> is at least one <strong>digit</strong> then <code class="inline-code">.</code> then at least one <strong>digit</strong>.
+                    A <strong>decimal</strong> is at least one <strong>digit</strong> then <code class="inline-code">.</code> then at least one <strong>digit</strong>.
                 </p>
 
                 <p>
-                    A <strong>number</strong> is a <strong>float</strong> or an <strong>integral</strong>. <strong>float</strong> definition has a precedence over <strong>integral</strong> definition.
+                    A <strong>number</strong> is a <strong>decimal</strong> or an <strong>integral</strong>. <strong>decimal</strong> definition has a precedence over <strong>integral</strong> definition.
                 </p>
 
                 <h2 class="page-section__title-2">Nodes</h2>
@@ -407,11 +408,11 @@
 
                 <p>
                     When Lorg parses a Lorg document, it creates a tree of <strong>nodes</strong>.
-                    A <strong>node</strong> contains a <strong>title</strong>, <strong>units</strong> and other <strong>nodes</strong> (its <strong>children</strong>).
+                    A node contains a <strong>title</strong>, <strong>units</strong> and other nodes (its <strong>children</strong>).
                 </p>
 
                 <p>
-                    Multiple <strong>nodes</strong> can have the same <strong>title</strong>.
+                    Multiple nodes can have the same title.
 
                 </p>
 
@@ -422,25 +423,25 @@
                 </p>
 
                 <p>
-                    When a <strong>unit</strong> is not defined in the Lorg document for a <strong>node</strong> but is defined for another <strong>node</strong>, Lorg creates this <strong>unit</strong> and set it as <strong>calculated</strong>.
-                    If the <strong>node</strong> does not have <strong>children</strong> then the <strong>unit value</strong> is set to the <strong>default unit value</strong> (which is<code class="inline-code">0</code>); if the <strong>node</strong> has <strong>children</strong> then the <strong>unit value</strong> is the sum of the <strong>children unit values</strong>.
+                    When a unit is not defined in the Lorg document for a node but is defined for another node, Lorg creates this unit and set it as calculated.
+                    If the node does not have children then the unit value is set to the <strong>default unit value</strong> (which is<code class="inline-code">0</code>); if the node has children then the unit value is the sum of the <strong>children unit values</strong>.
                 </p>
 
                 <p>
-                    A <strong>unit</strong> can be defined multiple times in a <strong>node</strong>.
-                    Only the last <strong>value</strong> is considered.
+                    A unit can be defined multiple times in a node.
+                    Only <strong>the last value</strong> is considered.
                 </p>
 
                 <p>
-                    A <strong>unit</strong> can be considered as <strong>ignored</strong>.
-                    When a <strong>unit value</strong> is considered as <strong>real</strong> in a <strong>node</strong>, then all the <strong>unit values</strong> of the <strong>children</strong> of this <strong>node</strong> for this <strong>unit</strong> are considered <strong>ignored</strong>.
-                    This means that those <strong>ignored unit values</strong> are not used to get the <strong>unit value</strong> for the highest <strong>node</strong> parent (the <strong>node</strong> of <strong>node level</strong> <code class="inline-code">1</code>).
+                    A unit can be considered as <strong>ignored</strong>.
+                    When a unit value is considered as real in a node, then all the unit values of the children of this node for this unit are considered ignored.
+                    This means that those ignored unit values are not used to get the unit value for the highest node parent (the node of <strong>node level</strong> <code class="inline-code">1</code>).
                 </p>
 
                 <p>
-                    Lorg can create a main <strong>node</strong> called the <strong>total node</strong> if the user activates the option.
-                    All <strong>nodes</strong> with a <strong>node level</strong> of <code class="inline-code">1</code> are the <strong>children</strong> of this <strong>total node</strong>.
-                    The <strong>total node</strong> calculates its <strong>unit values</strong> as it is done for any other <strong>nodes</strong>.
+                    Lorg can create a main node called the <strong>total node</strong> if the user activates the option.
+                    All nodes with a node level of <code class="inline-code">1</code> are the children of this total node.
+                    The total node calculates its unit values as it is done for any other nodes.
                 </p>
 
                 <p>
