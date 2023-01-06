@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Documentation - Lorg</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles.css" />
+	<title>Documentation - Lorg</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="header__nav">
-            <a href="index.html" title="Lorg Home Page" class="header__link">Lorg</a>
-            <div class="header__link-group-right">
-                <a href="download.html" title="Download Lorg" class="header__link">Download</a>
-                <a href="documentation.html" title="Learn how to use Lorg" class="header__link">Learn</a>
-                <a href="app.html" title="Try Lorg" class="header__link">Try</a>
-            </div>
-        </nav>
-    </header>
+	<header class="header">
+		<nav class="header__nav">
+			<a href="index.html" title="Lorg Home Page" class="header__link">Lorg</a>
+			<div class="header__link-group-right">
+				<a href="download.html" title="Download Lorg" class="header__link">Download</a>
+				<a href="documentation.html" title="Learn how to use Lorg" class="header__link">Learn</a>
+				<a href="app.html" title="Try Lorg" class="header__link">Try</a>
+			</div>
+		</nav>
+	</header>
 
-    <main class="main">
+	<main class="main">
 
-        <section class="page-section">
-            <div class="container">
-                <h1 class="page-section__title-1">Lorg in a nutshell</h1>
-                <p>
-                    Lorg defines a syntax to organize hierarchical data.
-                    Hierarchical data are components containing other components.
-                    Here is a full example of a Lorg document used to prepare the gear for a trek.
-                </p>
+		<section class="page-section">
+			<div class="container">
+				<h1 class="page-section__title-1">Lorg in a nutshell</h1>
+				<p>
+					Lorg defines a syntax to organize hierarchical data.
+					Hierarchical data are components containing other components.
+					Here is a full example of a Lorg document used to prepare the gear for a trek.
+				</p>
 
-                <div class="code-snippet">
+				<div class="code-snippet">
 <pre class="code-snippet__pre"><code class="code-snippet__code"># Sleep
     ## Shelter
         Should I use a tent instead?
@@ -58,131 +58,131 @@
         $ Cost: 169
         $ Weight: 0
         I wear them so no weight in the backpack.</code></pre>
-                </div>
+				</div>
 
-                <p>
-                    Your goal with this document is to have the total <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code> of your gear.
-                </p>
+				<p>
+					Your goal with this document is to have the total <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code> of your gear.
+				</p>
 
-                <p>
-                    By glancing at the example you can certainly already create your own Lorg documents, but let's explain how this document is structured.
-                </p>
+				<p>
+					By glancing at the example you can certainly already create your own Lorg documents, but let's explain how this document is structured.
+				</p>
 
-                <h2 class="page-section__title-2">Leading and trailing spaces</h2>
+				<h2 class="page-section__title-2">Leading and trailing spaces</h2>
 
-                <p>
-                    Leading spaces (spaces at the beginning of a line) and trailing spaces (spaces at the end of a line) are ignored.
-                    They can be used to make the visualization of the hierarchy easier.
-                </p>
+				<p>
+					Leading spaces (spaces at the beginning of a line) and trailing spaces (spaces at the end of a line) are ignored.
+					They can be used to make the visualization of the hierarchy easier.
+				</p>
 
-                <h2 class="page-section__title-2">Nodes</h2>
+				<h2 class="page-section__title-2">Nodes</h2>
 
-                <p>
-                    In Lorg, components are call <strong>nodes</strong>.
-                    Nodes have a <strong>title</strong>, <strong>children</strong> and <strong>units</strong>.
-                </p>
+				<p>
+					In Lorg, components are call <strong>nodes</strong>.
+					Nodes have a <strong>title</strong>, <strong>children</strong> and <strong>units</strong>.
+				</p>
 
-                <p>
-                    In this example, there is a node with the title <code class="inline-code">Poncho</code>.
-                    It is the child of the node with the title <code class="inline-code">Clothes</code>.
-                    It defines two units: <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code>.
-                </p>
+				<p>
+					In this example, there is a node with the title <code class="inline-code">Poncho</code>.
+					It is the child of the node with the title <code class="inline-code">Clothes</code>.
+					It defines two units: <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code>.
+				</p>
 
-                <p>
-                    If you know Markdown, you already know how to structure your nodes.
-                    You use <code class="inline-code">#</code> to define the hierarchy and the number of <code class="inline-code">#</code> defines the <strong>node level</strong>.
-                </p>
+				<p>
+					If you know Markdown, you already know how to structure your nodes.
+					You use <code class="inline-code">#</code> to define the hierarchy and the number of <code class="inline-code">#</code> defines the <strong>node level</strong>.
+				</p>
 
-                <p>
-                    Multiple nodes can have the same title.
-                </p>
+				<p>
+					Multiple nodes can have the same title.
+				</p>
 
-                <p>
-                    In our example:
-                </p>
+				<p>
+					In our example:
+				</p>
 
-                <ul>
-                    <li>
-                        The node with the title <code class="inline-code">Clothes</code> has a level of <code class="inline-code">1</code>.
-                    </li>
-                    <li>
-                        The node with the title <code class="inline-code">Sleep</code> is a sibling of <code class="inline-code">Clothes</code>.
-                    </li>
-                    <li>
-                        The node with the title <code class="inline-code">Poncho</code> is a child of <code class="inline-code">Clothes</code>.
-                    </li>
-                </ul>
+				<ul>
+					<li>
+						The node with the title <code class="inline-code">Clothes</code> has a level of <code class="inline-code">1</code>.
+					</li>
+					<li>
+						The node with the title <code class="inline-code">Sleep</code> is a sibling of <code class="inline-code">Clothes</code>.
+					</li>
+					<li>
+						The node with the title <code class="inline-code">Poncho</code> is a child of <code class="inline-code">Clothes</code>.
+					</li>
+				</ul>
 
-                <h2 class="page-section__title-2">Units</h2>
+				<h2 class="page-section__title-2">Units</h2>
 
-                <p>
-                    In Lorg, we define <strong>units</strong>.
-                    They have a <strong>name</strong> and a <strong>value</strong>.
-                    We associate nodes with units.
-                </p>
+				<p>
+					In Lorg, we define <strong>units</strong>.
+					They have a <strong>name</strong> and a <strong>value</strong>.
+					We associate nodes with units.
+				</p>
 
-                <p>
-                    To define a unit, start a line with a <code class="inline-code">$</code> followed by the unit name then by <code class="inline-code">:</code> then by the unit value.
-                </p>
+				<p>
+					To define a unit, start a line with a <code class="inline-code">$</code> followed by the unit name then by <code class="inline-code">:</code> then by the unit value.
+				</p>
 
-                <p>
-                    A unit name can contain spaces and <code class="inline-code">:</code>.
-                    For example the names <code class="inline-code">Weight (g)</code> and <code class="inline-code">expenses:groceries</code> are valid.
-                </p>
+				<p>
+					A unit name can contain spaces and <code class="inline-code">:</code>.
+					For example the names <code class="inline-code">Weight (g)</code> and <code class="inline-code">expenses:groceries</code> are valid.
+				</p>
 
-                <p>
-                    A unit value can be an <strong>integer</strong> or a <strong>decimal</strong>.
-                    The number must be in the Base-10 number system like (example: <code class="inline-code">34.5</code>, <code class="inline-code">15</code>).
-                    Hexadecimal values like <code class="inline-code">0xFF</code> are invalid.
-                </p>
+				<p>
+					A unit value can be an <strong>integer</strong> or a <strong>decimal</strong>.
+					The number must be in the Base-10 number system like (example: <code class="inline-code">34.5</code>, <code class="inline-code">15</code>).
+					Hexadecimal values like <code class="inline-code">0xFF</code> are invalid.
+				</p>
 
-                <p>
-                    If a node defines multiple times a value for the same unit, then the last defined value is considered.
-                </p>
+				<p>
+					If a node defines multiple times a value for the same unit, then the last defined value is considered.
+				</p>
 
-                <p>
-                    If you do not know the value of a unit in a node: do not define it!
-                    The values will be calculated by Lorg according to the unit values in the node children.
-                    This is the whole point of Lorg!
-                </p>
+				<p>
+					If you do not know the value of a unit in a node: do not define it!
+					The values will be calculated by Lorg according to the unit values in the node children.
+					This is the whole point of Lorg!
+				</p>
 
-                <p>
-                    <strong>For the moment, Lorg only sums the values.</strong>
-                    Maybe in the future other operations will be available (average, min, max...).
-                </p>
+				<p>
+					<strong>For the moment, Lorg only sums the values.</strong>
+					Maybe in the future other operations will be available (average, min, max...).
+				</p>
 
-                <p>
-                    In our example:
-                </p>
+				<p>
+					In our example:
+				</p>
 
-                <ul>
-                    <li>
-                        <code class="inline-code">Tee-shirt</code> has a <code class="inline-code">Cost</code> of <code class="inline-code">0</code> and a <code class="inline-code">Weight</code> of <code class="inline-code">150</code>.
-                    </li>
-                    <li>
-                        <code class="inline-code">Clothes</code> does not have any units.
-                        Lorg will calculate its associated <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code> units.
-                    </li>
-                </ul>
+				<ul>
+					<li>
+						<code class="inline-code">Tee-shirt</code> has a <code class="inline-code">Cost</code> of <code class="inline-code">0</code> and a <code class="inline-code">Weight</code> of <code class="inline-code">150</code>.
+					</li>
+					<li>
+						<code class="inline-code">Clothes</code> does not have any units.
+						Lorg will calculate its associated <code class="inline-code">Cost</code> and <code class="inline-code">Weight</code> units.
+					</li>
+				</ul>
 
-                <h2 class="page-section__title-2">Comments</h2>
+				<h2 class="page-section__title-2">Comments</h2>
 
-                <p>
-                    All lines that are not <strong>node definitions</strong> or <strong>unit definitions</strong> are <strong>comments</strong>.
-                    Comments are ignored by Lorg.
-                </p>
+				<p>
+					All lines that are not <strong>node definitions</strong> or <strong>unit definitions</strong> are <strong>comments</strong>.
+					Comments are ignored by Lorg.
+				</p>
 
-                <p>
-                    In our example, the line <code class="inline-code">I should bring a jacket.</code> is ignored.
-                </p>
+				<p>
+					In our example, the line <code class="inline-code">I should bring a jacket.</code> is ignored.
+				</p>
 
-                <h2 class="page-section__title-2">Getting the result</h2>
+				<h2 class="page-section__title-2">Getting the result</h2>
 
-                <p>
-                    Lorg (with the options <code class="inline-code">prettify</code> and <code class="inline-code">total</code> activated) returns this result for our example.
-                </p>
+				<p>
+					Lorg (with the options <code class="inline-code">prettify</code> and <code class="inline-code">total</code> activated) returns this result for our example.
+				</p>
 
-                <div class="code-snippet">
+				<div class="code-snippet">
 <pre class="code-snippet__pre">TOTAL
 │ $ Cost: 398.99 [Calculated]
 │ $ Weight: 2805 [Calculated]
@@ -216,263 +216,263 @@
     └── Shoes
           $ Cost: 169
           $ Weight: 0</pre>
-                </div>
+				</div>
 
-                <p>
-                    When a unit was not defined in the document, it is <strong>calculated</strong> by Lorg.
-                    If the node does not have children, the value is <code class="inline-code">0</code>.
-                    Else the value is calculated according to the children.
-                    In all cases, those created units are indicated by <code class="inline-code">[Calculated]</code>
-                </p>
+				<p>
+					When a unit was not defined in the document, it is <strong>calculated</strong> by Lorg.
+					If the node does not have children, the value is <code class="inline-code">0</code>.
+					Else the value is calculated according to the children.
+					In all cases, those created units are indicated by <code class="inline-code">[Calculated]</code>
+				</p>
 
-                <p>
-                    A unit defined in the document can be <strong>ignored</strong>.
-                    This means that its value is not used for the total.
-                    It happens when a parent already set a value.
-                    Those ignored units are indicated by <code class="inline-code">[Ignored]</code>
-                </p>
+				<p>
+					A unit defined in the document can be <strong>ignored</strong>.
+					This means that its value is not used for the total.
+					It happens when a parent already set a value.
+					Those ignored units are indicated by <code class="inline-code">[Ignored]</code>
+				</p>
 
-                <p>
-                    In our example:
-                </p>
+				<p>
+					In our example:
+				</p>
 
-                <ul>
-                    <li>
-                        <code class="inline-code">Clothes</code> now has units.
-                        The units values are the sum of the unit values of its children.
-                    </li>
-                    <li>
-                        The unit values of <code class="inline-code">Liner</code> are ignored because its parent <code class="inline-code">Sleeping bag</code> has already defined values for the same units.
-                    </li>
-                </ul>
+				<ul>
+					<li>
+						<code class="inline-code">Clothes</code> now has units.
+						The units values are the sum of the unit values of its children.
+					</li>
+					<li>
+						The unit values of <code class="inline-code">Liner</code> are ignored because its parent <code class="inline-code">Sleeping bag</code> has already defined values for the same units.
+					</li>
+				</ul>
 
-                <h2 class="page-section__title-2">Using Lorg</h2>
+				<h2 class="page-section__title-2">Using Lorg</h2>
 
-                <p>
-                    Lorg is open source.
-                    Lorg is available as a <a href="download.html">command line interface</a> or as a <a href="app.html">web app</a>.
-                </p>
+				<p>
+					Lorg is open source.
+					Lorg is available as a <a href="download.html">command line interface</a> or as a <a href="app.html">web app</a>.
+				</p>
 
-                <p>
-                    When using the CLI version, write your document into a file and use the <code class="inline-code">lorg</code> command.
-                    If we put our example in a file named <code class="inline-code">trek.lorg</code>, we can use the following command.
-                </p>
+				<p>
+					When using the CLI version, write your document into a file and use the <code class="inline-code">lorg</code> command.
+					If we put our example in a file named <code class="inline-code">trek.lorg</code>, we can use the following command.
+				</p>
 
-                <div class="code-snippet">
+				<div class="code-snippet">
 <pre class="code-snippet__pre">lorg trek.lorg</pre>
-                </div>
+				</div>
 
-                <p>
-                    By convention, Lorg file extension is <code class="inline-code">.lorg</code> but you can use any other file extension.
-                </p>
+				<p>
+					By convention, Lorg file extension is <code class="inline-code">.lorg</code> but you can use any other file extension.
+				</p>
 
-                <p>
-                    You now know everything you need to know to use Lorg.
-                    We hope you will find Lorg useful for you!
-                </p>
+				<p>
+					You now know everything you need to know to use Lorg.
+					We hope you will find Lorg useful for you!
+				</p>
 
-            </div>
-        </section>
+			</div>
+		</section>
 
-        <section class="page-section">
-            <div class="container">
-                <h1 class="page-section__title-1">Syntax definition in English</h1>
-                <p>
-                    Here is the syntax definition written in English.
-                    This section is aimed for people who want to develop their own Lorg software.
-                    Lorg syntax was designed to be easy to pick up so you can certainly use Lorg without reading this section.
-                </p>
+		<section class="page-section">
+			<div class="container">
+				<h1 class="page-section__title-1">Syntax definition in English</h1>
+				<p>
+					Here is the syntax definition written in English.
+					This section is aimed for people who want to develop their own Lorg software.
+					Lorg syntax was designed to be easy to pick up so you can certainly use Lorg without reading this section.
+				</p>
 
-                <h2 class="page-section__title-2">Various</h2>
+				<h2 class="page-section__title-2">Various</h2>
 
-                <p>
-                    The character <strong>carriage return</strong> (ASCII code <code class="inline-code">13</code> or <code class="inline-code">0x0D</code>) is <strong>completely ignored</strong>.
-                    Why? Because Microsoft Windows users would certainly not want to put this character into their node titles or their unit values, and this character is not used except for defining the end of a line.
-                </p>
+				<p>
+					The character <strong>carriage return</strong> (ASCII code <code class="inline-code">13</code> or <code class="inline-code">0x0D</code>) is <strong>completely ignored</strong>.
+					Why? Because Microsoft Windows users would certainly not want to put this character into their node titles or their unit values, and this character is not used except for defining the end of a line.
+				</p>
 
-                <p>
-                    <strong>Any character</strong> is any character except the <strong>new line character</strong> (ASCII code <code class="inline-code">10</code> or <code class="inline-code">0x0A</code>).
-                </p>
+				<p>
+					<strong>Any character</strong> is any character except the <strong>new line character</strong> (ASCII code <code class="inline-code">10</code> or <code class="inline-code">0x0A</code>).
+				</p>
 
-                <p>
-                    A <strong>white space</strong> can be the <strong>space character</strong> (ASCII code <code class="inline-code">32</code> or <code class="inline-code">0x20</code>) or the <strong>tabulation character</strong> (ASCII code <code class="inline-code">9</code>).
-                </p>
+				<p>
+					A <strong>white space</strong> can be the <strong>space character</strong> (ASCII code <code class="inline-code">32</code> or <code class="inline-code">0x20</code>) or the <strong>tabulation character</strong> (ASCII code <code class="inline-code">9</code>).
+				</p>
 
-                <p>
-                    <strong>Optional white spaces</strong> is zero or multiple <strong>white spaces</strong>.
-                </p>
+				<p>
+					<strong>Optional white spaces</strong> is zero or multiple <strong>white spaces</strong>.
+				</p>
 
-                <p>
-                    <strong>Leading spaces</strong> is <strong>optional white spaces</strong> at the beginning of a line.
-                </p>
+				<p>
+					<strong>Leading spaces</strong> is <strong>optional white spaces</strong> at the beginning of a line.
+				</p>
 
-                <p>
-                    <strong>Trailing spaces</strong> is <strong>optional white spaces</strong> at the end of a line.
-                </p>
+				<p>
+					<strong>Trailing spaces</strong> is <strong>optional white spaces</strong> at the end of a line.
+				</p>
 
-                <p>
-                    A <strong>digit</strong> is <code class="inline-code">0</code> or <code class="inline-code">1</code> or <code class="inline-code">2</code> or <code class="inline-code">3</code> or <code class="inline-code">4</code> or <code class="inline-code">5</code> or <code class="inline-code">6</code> or <code class="inline-code">7</code> or <code class="inline-code">8</code> or <code class="inline-code">9</code>.
-                </p>
+				<p>
+					A <strong>digit</strong> is <code class="inline-code">0</code> or <code class="inline-code">1</code> or <code class="inline-code">2</code> or <code class="inline-code">3</code> or <code class="inline-code">4</code> or <code class="inline-code">5</code> or <code class="inline-code">6</code> or <code class="inline-code">7</code> or <code class="inline-code">8</code> or <code class="inline-code">9</code>.
+				</p>
 
-                <p>
-                    An <strong>integral</strong> is at least one <strong>digit</strong>.
-                </p>
+				<p>
+					An <strong>integral</strong> is at least one <strong>digit</strong>.
+				</p>
 
-                <p>
-                    A <strong>decimal</strong> is at least one <strong>digit</strong> then <code class="inline-code">.</code> then at least one <strong>digit</strong>.
-                </p>
+				<p>
+					A <strong>decimal</strong> is at least one <strong>digit</strong> then <code class="inline-code">.</code> then at least one <strong>digit</strong>.
+				</p>
 
-                <p>
-                    A <strong>number</strong> is a <strong>decimal</strong> or an <strong>integral</strong>. <strong>decimal</strong> definition has a precedence over <strong>integral</strong> definition.
-                </p>
+				<p>
+					A <strong>number</strong> is a <strong>decimal</strong> or an <strong>integral</strong>. <strong>decimal</strong> definition has a precedence over <strong>integral</strong> definition.
+				</p>
 
-                <h2 class="page-section__title-2">Nodes</h2>
+				<h2 class="page-section__title-2">Nodes</h2>
 
-                <p>
-                    A <strong>node heading</strong> contains one or more <code class="inline-code">#</code>.
-                </p>
+				<p>
+					A <strong>node heading</strong> contains one or more <code class="inline-code">#</code>.
+				</p>
 
-                <p>
-                    A <strong>node title</strong> contains a non <strong>white space</strong> then zero or more <strong>any character</strong>, and must end with a non <strong>white space</strong>.
-                </p>
+				<p>
+					A <strong>node title</strong> contains a non <strong>white space</strong> then zero or more <strong>any character</strong>, and must end with a non <strong>white space</strong>.
+				</p>
 
-                <p>
-                    A <strong>node definition</strong> is defined in a full line from the first character of the line to the last character.
-                </p>
+				<p>
+					A <strong>node definition</strong> is defined in a full line from the first character of the line to the last character.
+				</p>
 
-                <p>
-                    A <strong>node definition</strong> ignores <strong>leading spaces</strong> and <strong>trailing spaces</strong>.
-                </p>
+				<p>
+					A <strong>node definition</strong> ignores <strong>leading spaces</strong> and <strong>trailing spaces</strong>.
+				</p>
 
-                <p>
-                    A <strong>node definition</strong> contains a <strong>node heading</strong> then <strong>optional white spaces</strong> then a <strong>node title</strong>.
-                </p>
+				<p>
+					A <strong>node definition</strong> contains a <strong>node heading</strong> then <strong>optional white spaces</strong> then a <strong>node title</strong>.
+				</p>
 
-                <p>
-                    The number of <code class="inline-code">#</code> in the <strong>node heading</strong> defines the <strong>node level</strong>.
-                </p>
+				<p>
+					The number of <code class="inline-code">#</code> in the <strong>node heading</strong> defines the <strong>node level</strong>.
+				</p>
 
-                <p>
-                    In a Lorg document, there can be multiple <strong>node definitions</strong> with a <strong>node level</strong> of <code class="inline-code">1</code>.
-                    For nodes with a superior <strong>node level</strong>, the <strong>node level</strong> must not be superior to 1 + the node level of the previous node definition.
-                    In other words, a <strong>node</strong> must be the sibling or the direct descendant of another <strong>node</strong>.
-                </p>
+				<p>
+					In a Lorg document, there can be multiple <strong>node definitions</strong> with a <strong>node level</strong> of <code class="inline-code">1</code>.
+					For nodes with a superior <strong>node level</strong>, the <strong>node level</strong> must not be superior to 1 + the node level of the previous node definition.
+					In other words, a <strong>node</strong> must be the sibling or the direct descendant of another <strong>node</strong>.
+				</p>
 
-                <p>
-                    If a line starts a <strong>node definition</strong> but it is not a valid <strong>node definition</strong> (for example it does not contain the <strong>node title</strong>), then this is an error.
-                </p>
+				<p>
+					If a line starts a <strong>node definition</strong> but it is not a valid <strong>node definition</strong> (for example it does not contain the <strong>node title</strong>), then this is an error.
+				</p>
 
-                <h2 class="page-section__title-2">Units</h2>
+				<h2 class="page-section__title-2">Units</h2>
 
-                <p>
-                    A <strong>unit name</strong> contains a non <strong>white space</strong> then zero or more <strong>any character</strong>, and must end with a non <strong>white space</strong>.
-                </p>
+				<p>
+					A <strong>unit name</strong> contains a non <strong>white space</strong> then zero or more <strong>any character</strong>, and must end with a non <strong>white space</strong>.
+				</p>
 
-                <p>
-                    A <strong>unit value</strong> is a <strong>number</strong>.
-                </p>
+				<p>
+					A <strong>unit value</strong> is a <strong>number</strong>.
+				</p>
 
-                <p>
-                    A <strong>unit definition</strong> is defined in a full line from the first character of the line to the last characters.
-                </p>
+				<p>
+					A <strong>unit definition</strong> is defined in a full line from the first character of the line to the last characters.
+				</p>
 
-                <p>
-                    A <strong>node definition</strong> ignores <strong>leading spaces</strong> and <strong>trailing spaces</strong>.
-                </p>
+				<p>
+					A <strong>node definition</strong> ignores <strong>leading spaces</strong> and <strong>trailing spaces</strong>.
+				</p>
 
-                <p>
-                    A <strong>unit definition</strong> contains a <code class="inline-code">$</code> then <strong>optional white spaces</strong> then a <strong>unit name</strong> then <strong>optional white spaces</strong> then a <code class="inline-code">:</code> then <strong>optional white spaces</strong> then a <strong>unit value</strong>. This means that <strong>unit names</strong> can contain one or more <code class="inline-code">:</code> and <strong>white spaces</strong>.
-                </p>
+				<p>
+					A <strong>unit definition</strong> contains a <code class="inline-code">$</code> then <strong>optional white spaces</strong> then a <strong>unit name</strong> then <strong>optional white spaces</strong> then a <code class="inline-code">:</code> then <strong>optional white spaces</strong> then a <strong>unit value</strong>. This means that <strong>unit names</strong> can contain one or more <code class="inline-code">:</code> and <strong>white spaces</strong>.
+				</p>
 
-                <p>
-                    A <strong>unit definition</strong> must follow, but not necessarily directly, a <strong>node definition</strong>. In other words, a <strong>unit definition</strong> must be associated with a <strong>node definition</strong>.
-                </p>
+				<p>
+					A <strong>unit definition</strong> must follow, but not necessarily directly, a <strong>node definition</strong>. In other words, a <strong>unit definition</strong> must be associated with a <strong>node definition</strong>.
+				</p>
 
-                <p>
-                    If a line starts a <strong>unit definition</strong> but it is not a valid <strong>unit definition</strong> (for example it does not contain a <strong>unit value</strong>), then this is an error.
-                </p>
+				<p>
+					If a line starts a <strong>unit definition</strong> but it is not a valid <strong>unit definition</strong> (for example it does not contain a <strong>unit value</strong>), then this is an error.
+				</p>
 
-                <h2 class="page-section__title-2">Comments</h2>
+				<h2 class="page-section__title-2">Comments</h2>
 
-                <p>
-                    All lines that are not <strong>node definitions</strong> or <strong>unit definitions</strong> are <strong>comments</strong>; they are ignored.
-                </p>
+				<p>
+					All lines that are not <strong>node definitions</strong> or <strong>unit definitions</strong> are <strong>comments</strong>; they are ignored.
+				</p>
 
-            </div>
-        </section>
+			</div>
+		</section>
 
 
-        <section class="page-section">
-            <div class="container">
-                <h1 class="page-section__title-1">Behaviour</h1>
+		<section class="page-section">
+			<div class="container">
+				<h1 class="page-section__title-1">Behaviour</h1>
 
-                <p>
-                    When Lorg parses a Lorg document, it creates a tree of <strong>nodes</strong>.
-                    A node contains a <strong>title</strong>, <strong>units</strong> and other nodes (its <strong>children</strong>).
-                </p>
+				<p>
+					When Lorg parses a Lorg document, it creates a tree of <strong>nodes</strong>.
+					A node contains a <strong>title</strong>, <strong>units</strong> and other nodes (its <strong>children</strong>).
+				</p>
 
-                <p>
-                    Multiple nodes can have the same title.
+				<p>
+					Multiple nodes can have the same title.
 
-                </p>
+				</p>
 
-                <p>
-                    A <strong>unit value</strong> can be considered as <strong>real</strong> or <strong>calculated</strong>.
-                    A <strong>real unit value</strong> is a value explicitly defined in the Lorg document.
-                    A <strong>calculated unit value</strong> is a value calculated by Lorg.
-                </p>
+				<p>
+					A <strong>unit value</strong> can be considered as <strong>real</strong> or <strong>calculated</strong>.
+					A <strong>real unit value</strong> is a value explicitly defined in the Lorg document.
+					A <strong>calculated unit value</strong> is a value calculated by Lorg.
+				</p>
 
-                <p>
-                    When a unit is not defined in the Lorg document for a node but is defined for another node, Lorg creates this unit and set it as calculated.
-                    If the node does not have children then the unit value is set to the <strong>default unit value</strong> (which is<code class="inline-code">0</code>); if the node has children then the unit value is the sum of the <strong>children unit values</strong>.
-                </p>
+				<p>
+					When a unit is not defined in the Lorg document for a node but is defined for another node, Lorg creates this unit and set it as calculated.
+					If the node does not have children then the unit value is set to the <strong>default unit value</strong> (which is<code class="inline-code">0</code>); if the node has children then the unit value is the sum of the <strong>children unit values</strong>.
+				</p>
 
-                <p>
-                    A unit can be defined multiple times in a node.
-                    Only <strong>the last value</strong> is considered.
-                </p>
+				<p>
+					A unit can be defined multiple times in a node.
+					Only <strong>the last value</strong> is considered.
+				</p>
 
-                <p>
-                    A unit can be considered as <strong>ignored</strong>.
-                    When a unit value is considered as real in a node, then all the unit values of the children of this node for this unit are considered ignored.
-                    This means that those ignored unit values are not used to get the unit value for the highest node parent (the node of <strong>node level</strong> <code class="inline-code">1</code>).
-                </p>
+				<p>
+					A unit can be considered as <strong>ignored</strong>.
+					When a unit value is considered as real in a node, then all the unit values of the children of this node for this unit are considered ignored.
+					This means that those ignored unit values are not used to get the unit value for the highest node parent (the node of <strong>node level</strong> <code class="inline-code">1</code>).
+				</p>
 
-                <p>
-                    Lorg can create a main node called the <strong>total node</strong> if the user activates the option.
-                    All nodes with a node level of <code class="inline-code">1</code> are the children of this total node.
-                    The total node calculates its unit values as it is done for any other nodes.
-                </p>
+				<p>
+					Lorg can create a main node called the <strong>total node</strong> if the user activates the option.
+					All nodes with a node level of <code class="inline-code">1</code> are the children of this total node.
+					The total node calculates its unit values as it is done for any other nodes.
+				</p>
 
-                <p>
-                    Lorg can also export the result in the JSON format.
-                </p>
-            </div>
-        </section>
+				<p>
+					Lorg can also export the result in the JSON format.
+				</p>
+			</div>
+		</section>
 
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <nav class="footer__nav">
-                <div class="footer__content">
-                    <section class="footer__section">
-                        <h1 class="footer__section-title">Dev</h1>
-                        <ul class="footer__nav-list">
-                            <li class="footer__nav-list-element"><a class="footer__link" href="devlog.html" title="Development log">Log</a></li>
-                            <li class="footer__nav-list-element"><a class="footer__link" href="wishlist.html" title="Wishlist">Wishlist</a></li>
-                        </ul>
-                    </section>
-                    <section class="footer__section">
-                        <h1 class="footer__section-title">Use</h1>
-                        <ul class="footer__nav-list">
-                            <li class="footer__nav-list-element"><a class="footer__link" href="download.html" title="Download">Download</a></li>
-                            <li class="footer__nav-list-element"><a class="footer__link" href="documentation.html" title="Documentation">Learn</a></li>
-                            <li class="footer__nav-list-element"><a class="footer__link" href="app.html" title="Web app">Try</a></li>
-                        </ul>
-                    </section>
-                </div>
-            </nav>
-        </div>
-    </footer>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<nav class="footer__nav">
+				<div class="footer__content">
+					<section class="footer__section">
+						<h1 class="footer__section-title">Dev</h1>
+						<ul class="footer__nav-list">
+							<li class="footer__nav-list-element"><a class="footer__link" href="devlog.html" title="Development log">Log</a></li>
+							<li class="footer__nav-list-element"><a class="footer__link" href="wishlist.html" title="Wishlist">Wishlist</a></li>
+						</ul>
+					</section>
+					<section class="footer__section">
+						<h1 class="footer__section-title">Use</h1>
+						<ul class="footer__nav-list">
+							<li class="footer__nav-list-element"><a class="footer__link" href="download.html" title="Download">Download</a></li>
+							<li class="footer__nav-list-element"><a class="footer__link" href="documentation.html" title="Documentation">Learn</a></li>
+							<li class="footer__nav-list-element"><a class="footer__link" href="app.html" title="Web app">Try</a></li>
+						</ul>
+					</section>
+				</div>
+			</nav>
+		</div>
+	</footer>
 </body>
 </html>

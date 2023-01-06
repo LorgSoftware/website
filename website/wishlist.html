@@ -1,109 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Wishlist - Lorg</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles.css" />
+	<title>Wishlist - Lorg</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="header__nav">
-            <a href="index.html" title="Lorg Home Page" class="header__link">Lorg</a>
-            <div class="header__link-group-right">
-                <a href="download.html" title="Download Lorg" class="header__link">Download</a>
-                <a href="documentation.html" title="Learn how to use Lorg" class="header__link">Learn</a>
-                <a href="app.html" title="Try Lorg" class="header__link">Try</a>
-            </div>
-        </nav>
-    </header>
+	<header class="header">
+		<nav class="header__nav">
+			<a href="index.html" title="Lorg Home Page" class="header__link">Lorg</a>
+			<div class="header__link-group-right">
+				<a href="download.html" title="Download Lorg" class="header__link">Download</a>
+				<a href="documentation.html" title="Learn how to use Lorg" class="header__link">Learn</a>
+				<a href="app.html" title="Try Lorg" class="header__link">Try</a>
+			</div>
+		</nav>
+	</header>
 
-    <main class="main">
+	<main class="main">
 
-        <section class="page-section">
-            <div class="container">
-                <h1 class="page-section__title-1">Wishlist</h1>
-                <p>
-                    Here is a list of functionalities that could be nice to have in the future.
-                    There is no guaranty that those functionalities will be implemented, neither in the way described here.
-                    Think of this page as an idea dump.
-                </p>
+		<section class="page-section">
+			<div class="container">
+				<h1 class="page-section__title-1">Wishlist</h1>
+				<p>
+					Here is a list of functionalities that could be nice to have in the future.
+					There is no guaranty that those functionalities will be implemented, neither in the way described here.
+					Think of this page as an idea dump.
+				</p>
 
-                <h2 class="page-section__title-2">Binaries</h2>
+				<h2 class="page-section__title-2">Binaries</h2>
 
-                <p>
-                    For the moment no binaries are available for download.
-                    The code has no special dependencies so it is really easy to build, but not every user wants to need the tools to build the software.
-                    It could be nice if the binaries were available for the most popular operating systems.
-                </p>
+				<p>
+					For the moment no binaries are available for download.
+					The code has no special dependencies so it is really easy to build, but not every user wants to need the tools to build the software.
+					It could be nice if the binaries were available for the most popular operating systems.
+				</p>
 
-                <p>
-                    Fortunately a web application version is available on the website.
-                </p>
+				<p>
+					Fortunately a web application version is available on the website.
+				</p>
 
-                <h2 class="page-section__title-2">Lorg as a library</h2>
+				<h2 class="page-section__title-2">Lorg as a library</h2>
 
-                <p>
-                    Currently Lorg is implemented mostly as a monolithic software.
-                    The engine part (parsing, manipulating data...) could be put into a Haxe library and a C++ library.
-                    This would enable the possibility for other developers to integrate Lorg support into their software.
-                    Some courageous developers could even make a full-fleshed UI for using Lorg documents.
-                </p>
+				<p>
+					Currently Lorg is implemented mostly as a monolithic software.
+					The engine part (parsing, manipulating data...) could be put into a Haxe library and a C++ library.
+					This would enable the possibility for other developers to integrate Lorg support into their software.
+					Some courageous developers could even make a full-fleshed UI for using Lorg documents.
+				</p>
 
-                <p>
-                    In Haxe the library could be implemented using <code class="inline-code">haxelib</code>.
-                </p>
+				<p>
+					In Haxe the library could be implemented using <code class="inline-code">haxelib</code>.
+				</p>
 
-                <div class="code-snippet">
+				<div class="code-snippet">
 <pre class="code-snippet__pre">haxelib install lorg</pre>
-                </div>
+				</div>
 
-                <p>
-                    It would be important to also export the library as a JavaScript file.
-                    There is a bigger pool of JavaScript developers than of Haxe developers.
-                    With this JavaScript library, more people could use Lorg.
-                </p>
+				<p>
+					It would be important to also export the library as a JavaScript file.
+					There is a bigger pool of JavaScript developers than of Haxe developers.
+					With this JavaScript library, more people could use Lorg.
+				</p>
 
-                <h2 class="page-section__title-2">Exporting into Lorg format</h2>
+				<h2 class="page-section__title-2">Exporting into Lorg format</h2>
 
-                <p>
-                    An option should be added to export the result in Lorg format.
-                    The main reason for that is to give the possibility for the users of the future Lorg library to import and export Lorg documents.
-                </p>
+				<p>
+					An option should be added to export the result in Lorg format.
+					The main reason for that is to give the possibility for the users of the future Lorg library to import and export Lorg documents.
+				</p>
 
-                <h2 class="page-section__title-2">Tabular display for the CLI version</h2>
+				<h2 class="page-section__title-2">Tabular display for the CLI version</h2>
 
-                <p>
-                    One of the main drawback of Lorg is the huge vertical space needed.
-                    It could be nice to at least display the result in a more compact way like in the following example.
-                </p>
+				<p>
+					One of the main drawback of Lorg is the huge vertical space needed.
+					It could be nice to at least display the result in a more compact way like in the following example.
+				</p>
 
-                <div class="code-snippet">
+				<div class="code-snippet">
 <pre class="code-snippet__pre">                       Cost              Weight
 Sleep                  169               2900
   Shelter              119               1700
     Trekking poles      69                570
     Tarp                50                500
   Sleeping bag          50               1200</pre>
-                </div>
+				</div>
 
-                <h2 class="page-section__title-2">Preamble</h2>
+				<h2 class="page-section__title-2">Preamble</h2>
 
-                <p>
-                    Every Lorg file could start with an optional preamble.
-                    Every line of the preamble would start by a <code class="inline-code">;</code>.
-                    The preamble stop at the first empty line.
-                </p>
+				<p>
+					Every Lorg file could start with an optional preamble.
+					Every line of the preamble would start by a <code class="inline-code">;</code>.
+					The preamble stop at the first empty line.
+				</p>
 
-                <p>
-                    In the preamble, options can be set.
-                    To simplify the parsing, the options would be set in a LISP format.
-                    Line comments can be written using <code class="inline-code">;</code>.
-                    Example below.
-                </p>
+				<p>
+					In the preamble, options can be set.
+					To simplify the parsing, the options would be set in a LISP format.
+					Line comments can be written using <code class="inline-code">;</code>.
+					Example below.
+				</p>
 
-                <div class="code-snippet">
-                    <pre class="code-snippet__pre">; (version 100)  ; Lorg version used
+				<div class="code-snippet">
+					<pre class="code-snippet__pre">; (version 100)  ; Lorg version used
 ;
 ; (unit weight                    ; Definition of the parameters for the unit "weight"
 ;    (display "Weight")           ; How to display
@@ -114,51 +114,51 @@ Sleep                  169               2900
 ; )
 
 # My first node...</pre>
-                </div>
+				</div>
 
-                <p>
-                    It could be nice to implement all the options defined in the example.
-                </p>
+				<p>
+					It could be nice to implement all the options defined in the example.
+				</p>
 
-                <h2 class="page-section__title-2">Subunits</h2>
+				<h2 class="page-section__title-2">Subunits</h2>
 
-                <p>
-                    In account software like hledger, it is possible to create subaccounts.
-                    For example the accounts  <code class="inline-code">expenses:food</code> and <code class="inline-code">expenses:clothes</code> are subaccounts of <code class="inline-code">expenses</code>.
-                </p>
+				<p>
+					In account software like hledger, it is possible to create subaccounts.
+					For example the accounts  <code class="inline-code">expenses:food</code> and <code class="inline-code">expenses:clothes</code> are subaccounts of <code class="inline-code">expenses</code>.
+				</p>
 
-                <p>
-                    Lorg could implement something similar for the unit.
-                    This is for this purpose that units can actually have <code class="inline-code">:</code> in their names.
-                    Lorg behaviour for managing subunits should mimic hledger behaviour for managing subaccounts.
-                </p>
+				<p>
+					Lorg could implement something similar for the unit.
+					This is for this purpose that units can actually have <code class="inline-code">:</code> in their names.
+					Lorg behaviour for managing subunits should mimic hledger behaviour for managing subaccounts.
+				</p>
 
-            </div>
-        </section>
+			</div>
+		</section>
 
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <nav class="footer__nav">
-                <div class="footer__content">
-                    <section class="footer__section">
-                        <h1 class="footer__section-title">Dev</h1>
-                        <ul class="footer__nav-list">
-                            <li class="footer__nav-list-element"><a class="footer__link" href="devlog.html" title="Development log">Log</a></li>
-                            <li class="footer__nav-list-element"><a class="footer__link" href="wishlist.html" title="Wishlist">Wishlist</a></li>
-                        </ul>
-                    </section>
-                    <section class="footer__section">
-                        <h1 class="footer__section-title">Use</h1>
-                        <ul class="footer__nav-list">
-                            <li class="footer__nav-list-element"><a class="footer__link" href="download.html" title="Download">Download</a></li>
-                            <li class="footer__nav-list-element"><a class="footer__link" href="documentation.html" title="Documentation">Learn</a></li>
-                            <li class="footer__nav-list-element"><a class="footer__link" href="app.html" title="Web app">Try</a></li>
-                        </ul>
-                    </section>
-                </div>
-            </nav>
-        </div>
-    </footer>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<nav class="footer__nav">
+				<div class="footer__content">
+					<section class="footer__section">
+						<h1 class="footer__section-title">Dev</h1>
+						<ul class="footer__nav-list">
+							<li class="footer__nav-list-element"><a class="footer__link" href="devlog.html" title="Development log">Log</a></li>
+							<li class="footer__nav-list-element"><a class="footer__link" href="wishlist.html" title="Wishlist">Wishlist</a></li>
+						</ul>
+					</section>
+					<section class="footer__section">
+						<h1 class="footer__section-title">Use</h1>
+						<ul class="footer__nav-list">
+							<li class="footer__nav-list-element"><a class="footer__link" href="download.html" title="Download">Download</a></li>
+							<li class="footer__nav-list-element"><a class="footer__link" href="documentation.html" title="Documentation">Learn</a></li>
+							<li class="footer__nav-list-element"><a class="footer__link" href="app.html" title="Web app">Try</a></li>
+						</ul>
+					</section>
+				</div>
+			</nav>
+		</div>
+	</footer>
 </body>
 </html>
