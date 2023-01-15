@@ -2,6 +2,9 @@
 
 This is the repository for [the Lorg website](https://www.lorg.software).
 
+The `repositories-index` directory contain the index page for [the repositories
+page](https://dev.lorg.software).
+
 ## Licenses
 
 This project is licensed under the Apache License, Version 2.0. The terms and
