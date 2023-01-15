@@ -118,6 +118,10 @@ body {
 	padding: 0;
 }
 
+.code-snippet__highlight {
+	background-color: #CCFF99;
+}
+
 .slogan {
 	font-size: 1.7em;
 }
