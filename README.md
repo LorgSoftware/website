@@ -1,5 +1,9 @@
 # Lorg website
 
+_If you are reading this on GitHub or other Git repository or service, then you
+are looking at a mirror. The official repository is [this Fossil
+repository](https://dev.lorg.software/website)._
+
 This is the repository for [the Lorg website](https://www.lorg.software).
 
 The `repositories-index` directory contain the index page for [the repositories
