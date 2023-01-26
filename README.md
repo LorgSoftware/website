@@ -22,7 +22,8 @@ Modified Source Versions." of GNU AGPLv3, which is contained in the file
 `AGPL`, for more information.
 
 You can find the source code of the web version of Lorg at [this
-address](https://dev.lorg.software/web-app).
+address](https://dev.lorg.software/web-app) ([GitHub
+mirror](https://github.com/LorgSoftware/web-app)).
 
 ## Copyrights
 
